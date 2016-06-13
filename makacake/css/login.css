@@ -1,0 +1,203 @@
+/*登录*/
+/*登录切换*/
+.cake_loginchoose{
+	margin-top:22px;
+	border-bottom:1px solid #b2c4b7;
+	height:30px;
+	font-size:0;
+}
+.cake_loginchoose a{
+	display:inline-block;
+	width:50%;
+	height:30px;
+	text-align:center;
+	font-size:16px;
+	color:#4c7258;
+}
+.cake_loginchoose .login_click{
+	border-bottom:1px solid #e97c5d;
+	color:#e97c5d;
+}
+.cake_login .cakelogin_input{
+	background: #fff;
+	border: 1px solid #d9e2dd;
+	height: 45px;
+	color: #c9c9c9;
+	line-height: 45px;
+	margin-top:10px;
+} 
+.cakelogin_input input{
+	width: 80%;
+	margin-left: 5px;
+	border: 0;
+	color: #666;
+	padding: 5px;
+	font-size: 14px;
+}
+.cakelogin_input input:focus{
+	outline: none;
+}
+.cakelogin_operate{
+	margin-top: 10px;
+	font-size: 14px;
+	color: #597d64;
+	line-height: 20px;
+}
+.cakelogin_operate input{
+	vertical-align: bottom;
+}
+.cakelogin_operate a{
+	color: #597d64;
+}
+.cakelogin_operate .fl a{
+	color:#e97c5d;
+}
+.cakelogin_btn{
+	margin-top:14px;
+	margin-bottom:100px;
+	width:100%;
+}
+
+
+/*注册*/
+.drreg_agree{
+	margin: 10px 0;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center; 
+	color: #888;
+}
+.drreg_agree input{
+	vertical-align: bottom;
+}
+.drreg_agree a{
+	color: #ca8565;
+}   
+.drreg_btn{
+	margin-top: 30px;
+	width: 65%;
+}       
+.drreg_btn p a{
+	display: inline;
+	color: #CA8565;
+}
+.drreg_btn p{
+	color: #888;
+	margin-top: 5px;
+}
+.drreg_btn p span{
+	color: #c57d5c;
+	text-decoration: underline;
+}
+/*验证码*/   
+.cakelogin_confirm{
+	position: relative;
+	font-size: 14px;
+}
+.cake_phonecode{
+	position: absolute;
+	right: 0;
+	top: -1px;
+	padding: 0 10px;
+	border-left: 1px solid #d9e2dd;
+	color: #4c7258;
+	min-width: 100px;
+	text-align: center;
+} 
+
+/*注册成功*/
+.success_link{
+	margin-top: 50px;
+}
+.success_link a{
+	display: inline-block;
+	width: 49%;
+	float: left;
+}
+.success_link a:first-child{
+	margin-right: 2%;
+}
+.success_link img{
+	width: 100%;
+}
+.success_box{
+	margin: 20px 0;
+	text-align: center;
+}
+.success_box h3{
+	color: #ca8565;
+	font-size: 12px;
+	margin: 12px 0;
+}
+.success_box p{
+	color: #8b8b8b;
+	line-height:18px;
+}
+.success_box p span{
+	color: #ff6262;
+}
+.success_box p a{
+	color: #ca8565;
+}
+/*找回密码成功*/
+.findpwd_box p{
+	margin-top: 20px;
+}
+.findpwd_link{
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 50px;
+}
+.findpwd_link{
+	display: inline-block;
+	color: #ca8565;
+	border-top: 1px solid #e6cabd;
+	border-bottom: 1px solid #e6cabd;
+}
+.findpwd_link a{
+	display: inline-block;
+	color: #ca8565;
+	padding: 8px 16px;
+}
+.drfind_warmTip{
+	text-align: center;
+	color: #888;
+	margin-top: 30px;
+}
+.drfind_warmTip p a{
+	color: #c57d5c;
+	text-decoration: underline;
+}
+
+/*操作成功页面按钮*/
+.success-btn{
+	margin-top:20px;
+}
+.success-btn a{
+	display:inline-block;
+	width:30%;
+	height:30px;
+	margin:0 20px;
+	border:1px solid #ca8565;
+	border-radius:5px;
+	text-align:center;
+	color:#ca8565;
+	line-height:30px;
+}
+.success_adv{
+	width:100%;
+	box-shadow:0 -1px 1px 1px rgba(0,0,0,.14);
+	font-size:0;
+}
+.success_adv img{
+	width:100%;
+}
+/*修改密码*/
+.drResetBtn{
+	width: 65%;
+	margin-bottom: 50px;
+}
+
+
+
+

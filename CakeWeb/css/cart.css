@@ -1,0 +1,556 @@
+/*购物车*/
+html,body{
+	height:100%;
+}
+.CartCort{
+	padding-bottom:60px;
+}
+.homeright{
+	left:auto;
+	right:8px;
+}
+/*商品*/
+.theshoplist{
+	padding:0 8px;
+	margin-bottom:28px;
+}
+.theshoplist li{
+	overflow:hidden;
+	background:#fff;
+	margin-top:8px;
+	font-size:0;
+	position:relative;
+}
+.theshopImg{
+	width:50%;
+}
+.theshopImg img{
+	width:100%;
+}
+.theshopWord{
+	width:48%;
+	color:#4c7258;
+	margin-top:16px;
+	padding-right:10px;
+}
+.thethingword{
+	height:96px;
+}
+.thethingword h3{
+	font-size:16px;
+	margin-bottom:8px;
+}
+.thethingword p{
+	font-size:12px;
+	line-height:20px;
+	margin-bottom:4px;
+}
+.thethingword i{
+	color:#e47b5d;
+}
+.thethingword span{
+	color:#8d9e92;
+}
+.buynum{
+	font-size:0;
+	padding-top:4px;
+}
+.buynum strong,.buynum span,.buynum input{
+	vertical-align:middle;
+	font-size:12px;
+	color:#4c7258;
+	display:inline-block;
+}
+.buynum span{
+	margin-right:8px;
+}
+.buynum strong{
+	font-size:16px;
+	font-weight:bold;
+	width:35px;
+	height:35px;
+	line-height:33px;
+	text-align:center;
+	border:1px solid #d9e2dd;
+	background:#fff;
+}
+.buynum input{
+	border:1px solid #d9e2dd;
+	border-left:none;
+	border-right:none;
+	padding:8.5px 0;
+	width:35px;
+	text-align:center;
+}
+.toclose{
+	position:absolute;
+	background:url(../img/common/close.png) no-repeat;
+	background-size:100% auto;
+	width:14px;
+	height:14px;
+	right:9px;
+	top:9px;
+}
+/*附加东西*/
+.otherthing{
+	margin:0 10px;
+}
+.otherthing p{
+	font-size:12px;
+	color:#4c7258;
+	line-height:18px;
+	margin-top:8px;
+}
+.toaddit{
+	padding-bottom:10px;
+	border-bottom:1px solid #d9e2dd;
+	font-size:14px;
+	color:#5d7e68;
+	background:url(../img/cart/orangetop.png) no-repeat 98% center;
+	background-size:14px auto;
+}
+.addshoplist li{
+	border-bottom:1px solid #d9e2dd;
+	padding:6px 0;
+	overflow:hidden;
+	font-size:0;
+}
+.addshopImg{
+	width:34%;
+}
+.addshopImg img{
+	width:100%;
+}
+.addshopWord{
+	width:62%;
+	color:#4c7258;
+	margin-top:16px;
+	padding-right:10px;
+}
+.addshopWord .fix{
+	height:44px;
+}
+.addshopWord span{
+	font-size:14px;
+	color:#4c7258;
+}
+.buynum em{
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:2%;
+	width:66px;
+	height:35px;
+	line-height:33px;
+	font-size:14px;
+	color:#4c7258;
+	text-align:center;
+	border:1px solid #d9e2dd;
+	background:#fff;
+}
+/*应付金额及按钮*/
+.Getdetail{
+	line-height:44px;
+	border-top:1px solid #dee2df;
+	font-size:0;
+	background:#e47b5d;
+	margin-top:20px;
+}
+.Getdetail span,.Getdetail a{
+	display:inline-block;
+	vertical-align:middle;
+	font-size:14px;
+	text-align:center;
+}
+.Getdetail span{
+	color:#4c7258;
+	width:43%;
+	background:#fff;
+	border-right:1px solid #dee2df;
+}
+.Getdetail i{
+	color:#e47b5d;
+}
+.Getdetail a{
+	width:28%;
+	background:#fff;
+	color:#e47b5d;
+}
+.Getdetail .togetit{
+	background:#e47b5d;
+	color:#fff;
+}
+/*购物车为无时*/
+.noshop{
+	margin-bottom:16%;
+}
+.noshop p{
+	background:url(../img/cart/cart.png) no-repeat center top;
+	background-size:62px auto;
+	font-size:16px;
+	color:#597d64;
+	text-align:center;
+	padding-top:80px;
+	margin:42px 0 35px;
+}
+/*收货地址列表*/
+.toaddbutton{
+	display:block;
+	background:#fff;
+	height:46px;
+	line-height:46px;
+	text-align:center;
+	margin-top:8px;
+	margin-bottom:6px;
+}
+.toaddbutton span{
+	font-size:14px;
+	color:#4c7258;
+	padding-left:23px;
+	background:url(../img/cart/add.png) no-repeat left center;
+	background-size:14px auto;
+}
+/*列表*/
+.addresslist li{
+	padding:17px 10px;
+	background:#fff;
+	margin-bottom:1px;
+	font-size:12px;
+	color:#4c7258;
+	line-height:24px;
+	position:relative;
+}
+.adressWord{
+	width:78%;
+}
+.adressWord i{
+	color:#e68b71;
+	display:none;
+}
+.todel{
+	position:absolute;
+	background:url(../img/cart/ljt.png) no-repeat;
+	width:24px;
+	height:26px;
+	background-size:100% auto;
+	top:50%;
+	margin-top:-13px;
+	left:82%;
+}
+.addresslist .adress_choose{
+	background:#fff url(../img/cart/right.png) no-repeat 96% center;
+	background-size:26px auto;
+}
+.addresslist .adress_choose i{
+	display:inline-block;
+}
+.addresslist .adress_choose .todel{
+	display:none;
+}
+/*添加收货地址*/
+.cake_login .cakelogin_input{
+	background: #fff;
+	border: 1px solid #d9e2dd;
+	height: 45px;
+	color: #c9c9c9;
+	line-height: 45px;
+	margin-top:10px;
+} 
+.cakelogin_input input{
+	width: 80%;
+	margin-left: 5px;
+	border: 0;
+	color: #666;
+	padding: 5px;
+	font-size: 14px;
+}
+.cakelogin_input input:focus{
+	outline: none;
+}
+.cakelogin_operate{
+	margin-top: 10px;
+	font-size: 14px;
+	color: #597d64;
+	line-height: 20px;
+	margin-bottom:10px;
+}
+.cakelogin_operate input{
+	vertical-align: bottom;
+}
+.cakelogin_operate a{
+	color: #597d64;
+}
+.cakelogin_operate .fl a{
+	color:#e97c5d;
+}
+.cakeadd_input{
+	margin-top:10px;
+}
+.cakeadd_input span{
+	display:inline-block;
+	height:45px;
+	line-height:43px;
+	text-align:center;
+	width:30%;
+	border:1px solid #d9e2dd;
+	background:#fff;
+	font-size:14px;
+	color:#597d64;
+}
+.cakeaddress{
+	width:66%;
+	height:45px;
+	line-height:43px;
+	border:1px solid #d9e2dd;
+	background:#fff url(../img/cart/graybottom.png) no-repeat 92% center;
+	background-size:14px auto;
+	position:relative;
+	font-size:14px;
+	color:#597d64;
+	padding-left:18px;
+}
+.cakeaddress select{
+	opacity:0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+}
+/*订单提交成功*/
+.detail_sure{
+	font-size:16px;
+	color:#4c7258;
+	line-height:30px;
+	margin-top:8px;
+}
+.detail_sure i{
+	color:#e47b5d;
+}
+.detailsure_btn{
+	text-align:center;
+	font-size:0;
+	margin-top:10px;
+}
+.detailsure_btn a{
+	display:inline-block;
+	width:40%;
+	margin:0 5px;
+}
+/*结算中心*/
+.adreenews{
+	margin-top:10px;
+	padding:10px 42px;
+	position:relative;
+	background:#fff url(../img/cart/grayright.png) no-repeat 96% center;
+	background-size:16px auto;
+	font-size:14px;
+	color:#4c7258;
+	line-height:24px;
+}
+.adress_icon{
+	background:url(../img/cart/adress.png) no-repeat;
+	width:22px;
+	height:30px;
+	background-size:100% auto;
+	position:absolute;
+	top:50%;
+	margin-top:-15px;
+	left:10px;
+}
+.Cartshoplist{
+	padding:0;
+	margin-bottom:16px;
+}
+.carthopWord{
+	width:46%;
+}
+.textright{
+	text-align:right;
+}
+/*配送时间*/
+.Thetime{
+	font-size:0;
+	color:#4c7258;
+}
+.Thetime p,.Thetime input{
+	font-size:14px;
+}
+.Thetime p{
+	margin-bottom:8px;
+	margin-top:4px;
+	line-height:20px;
+}
+.Thetime i{
+	font-size:12px;
+	color:#94a99b;
+}
+.Thetime input{
+	width:48%;
+	vertical-align:middle;
+	padding:10px 0;
+	background-color:#fff;
+	background-repeat:no-repeat;
+	background-size:20px auto;
+	background-position:94% center;
+	color:#4c7258;
+	border:none;
+	text-indent:7px;
+}
+.chooseDate{
+	background-image:url(../img/cart/date.png);
+}
+.chooseTime{
+	background-image:url(../img/cart/time.png);
+}
+/*其他配件*/
+.otherparts{
+	margin-top:16px;
+}
+.sametitle{
+	font-size:12px;
+	border-bottom:1px solid #d9e2dd;
+	color:#5d7e68;
+	padding-bottom:6px;
+}
+.birthday_same{
+	padding-top:10px;
+	margin-bottom:10px;
+}
+.birthday_same span{
+	font-size:14px;
+	color:#4c7258;
+}
+.check_dagou{
+	font-size:0;
+}
+.check_dagou i{
+	font-size:14px;
+	background:url(../img/cart/dian.png) no-repeat right center;
+	background-size:16px auto;
+	padding-right:20px;
+	color:#4c7258;
+	margin-left:8px;
+}
+.check_dagou .check_click{
+	background:url(../img/cart/click1.png) no-repeat right center;
+	background-size:16px auto;
+	color:#e47b5d;
+}
+.elsehide{
+	display:none;
+}
+.elsehide i{
+	display:block;
+	font-size:14px;
+	background:url(../img/cart/dian.png) no-repeat left center;
+	background-size:16px auto;
+	padding-left:20px;
+	color:#4c7258;
+	line-height:28px;
+}
+.elsehide .check_click{
+	background:url(../img/cart/click2.png) no-repeat left center;
+	background-size:16px auto;
+}
+.elsehide input{
+	font-size:14px;
+	width:100%;
+	border:1px solid #d9e2dd;
+	padding:10px 0;
+	background:#fff;
+	text-indent:8px;
+}
+/*支付方式*/
+.thepayway{
+	padding-top:12px;
+	padding-bottom:22px;
+}
+.payul{
+	overflow:hidden;
+	margin-left:-4.5%;
+}
+.payul li{
+	float:left;
+	width:46%;
+	height:44px;
+	line-height:44px;
+	border:1px solid #fff;
+	background:#fff;
+	font-size:14px;
+	color:#4c7258;
+	text-align:center;
+	margin-left:4%;
+	margin-top:10px;
+}
+.payul .pay_choose{
+	border:1px solid #e97c5d;
+	background:#fff url(../img/list/dagou.png) no-repeat right bottom;
+	background-size:15px auto;
+	color:#e97c5d;
+}
+/*其他信息*/
+.cartsame{
+	border-top:1px solid #d9e2dd;
+	padding:17px 0;
+	font-size:0;
+}
+.cartsame span,.cartsame i,.cartsame input{
+	vertical-align:middle;
+	color:#4c7258;
+}
+.cartsame em{
+	font-size:12px;
+	display:inline-block;
+	background:#e97c5d;
+	color:#fff;
+	padding:2px;
+	margin-left:4px;
+}
+.cartsame span{
+	font-size:14px;
+}
+.cartsame input{
+	border:none;
+	font-size:14px;
+	background:#ebf5ee;
+	width:72%;
+}
+.cartyhq{
+	background:url(../img/cart/smallright.png) no-repeat right center;
+	background-size:9px auto;
+	padding-right:14px;
+}
+.cartPrice{
+	line-height:27px;
+}
+.cartPrice i{
+	font-size:14px;
+	color:#e47b5d;
+}
+.cartPrice_first{
+	margin-bottom:7px;
+}
+.cartPrice_first span{
+	background:url(../img/cart/dian.png) no-repeat left center;
+	background-size:16px auto;
+	padding-left:18px;
+	display:inline-block;
+}
+.cartPrice_first .check_click{
+	background:url(../img/cart/click2.png) no-repeat left center;
+	background-size:16px auto;
+}
+.cartPrice strong{
+	margin-left:4px;
+	color:#94a99b;
+}
+.cartsame p{
+	font-size:12px;
+	color:#4c7258;
+	line-height:20px;
+}
+.Getdetail_sp span{
+	text-align:right;
+	width:71%;
+	padding-right:8px;
+}

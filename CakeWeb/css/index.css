@@ -1,0 +1,48 @@
+/*首页头部*/
+.header.indexHead{
+	background:#fff url(../img/common/logo.png) no-repeat 5px center;
+	background-size:auto 50%;
+	border-bottom:none;
+}
+
+/*首页主体部分*/
+/*首页banner*/
+#index-slide {
+	max-width: 640px;
+	padding: 0;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+/*首页分类菜单*/
+.typeMenu{
+	position:relative;
+	height:66px;
+	background:#fff;    
+	z-index:2;
+	border-bottom:1px solid #dee2df;
+}
+.typeMenu a{
+	display:inline-block;
+	width:24%;
+	padding-top:42px;
+	color:#4c7258;
+	font-size:14px;
+	text-align:center;
+}
+.typeMenu a.tmBg1{
+	background:url(../img/index/menu1.png) no-repeat center 12px;
+	background-size:auto 22px;
+}
+.typeMenu a.tmBg2{
+	background:url(../img/index/menu2.png) no-repeat center 12px;
+	background-size:auto 22px;
+}
+.typeMenu a.tmBg3{
+	background:url(../img/index/menu3.png) no-repeat center 12px;
+	background-size:auto 22px;
+}
+.typeMenu a.tmBg4{
+	background:url(../img/index/menu4.png) no-repeat center 12px;
+	background-size:auto 22px;
+}
+

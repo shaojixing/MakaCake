@@ -1,0 +1,160 @@
+﻿@charset "utf-8";
+/* 简单流媒体
+   注意: 流媒体要求您删除 HTML 中媒体的高度和宽度属性
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+	border:none;
+}
+input{outline:none;padding-left:4px;font-family:"微软雅黑"}
+/* IE 6 不支持最大宽度，因此默认为 100% 宽度 */
+.ie6 img {
+	width:100%;
+	border:none;
+}
+html,body{ background-color:#ebf5ee; font-family:"微软雅黑";
+color:#4c7258;
+
+}
+a{ text-decoration:none;}   
+table{border-spacing: 10px;border-collapse: separate;}
+ul{margin: 0;
+padding: 0;
+border: none;
+list-style-type: none;}
+
+.wrong {
+color:#e97c5d;
+font-weight:bold;
+}
+/*
+	Dreamweaver 流体网格属性
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	灵感来自于 Ethan Marcotte 的“具有响应的 Web 设计” 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	和 Joni Korpi 的“黄金网格系统”
+	http://goldengridsystem.com/
+*/
+
+/* 移动设备布局: 480px 及更低。 */
+
+.gridContainer {
+	margin:0 auto;
+	width: 87.36%;
+	padding-left: 1.82%;
+	padding-right: 1.82%;
+	height:100%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#banner1{
+	clear: both;
+	float: left;
+	margin:0 auto;
+	width: 100%;
+	display: block;
+	}
+#foot{
+		width:100%; 
+		height:auto;
+		font-size:16px;
+		font-family:"微软雅黑";
+		color:#4c7258;
+		line-height:30px;
+		text-align:center;
+		}
+.dl_border{border:1px solid #dcdcdc;border-radius:4px;background:#fff}
+/* 平板电脑布局: 481px 至 768px。样式继承自: 移动设备布局。 */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 90.675%;
+	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+	margin:0 auto;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#banner1{
+	clear: both;
+	float: left;
+	margin:0 auto;
+	width: 100%;
+	display: block;
+	}
+}
+
+/* 桌面电脑布局: 769px 至最高 1232px。样式继承自: 移动设备布局和平板电脑布局。 */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 88.2%;
+	max-width: 1232px;
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+	margin: 0 auto;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#banner1{
+	clear: both;
+	float: left;
+	margin:0 auto;
+	width: 100%;
+	display: block;
+	}
+}
+.zc_border{
+    margin-top:15px;
+}
+.spec {
+width:100%;
+clear:both;
+}
+.spec .spec_item{ width:100%; float:left; border:none;background-color:#FFF;font-size:14px;padding:15px 15px;margin:10px 0px;white-space:nowrap;overflow:hidden;}
+.spec .on{border:1px solid #e97c5d;background:url(images/icon_selected.png) no-repeat right 
+27px; white-space:nowrap;overflow:hidden; color:#e97c5d; background-color:#FFF;}
+
+.order_qty{border:1px solid #BBB; float:right; margin-top:20px;}
+.number{width:100%;font-size:18px;border:none;text-align:center; height:100%;}
+
+#btn_add{position:fixed;bottom:0px;text-align:center;background-color:#FFF;border-top:1px solid #DDD;padding:10px 0;display:none;}
+.btn,.btn:visited{cursor:pointer;border:none;;background-color:#e97c5d;font-size:20px;padding:8px 25px;color:#FFF;font-weight:bold;display:inline-block;white-space:nowrap;}
+.spec .on{border:1px solid #FF5619;background:url(images/icon_selected.png) no-repeat right 27px;background-color:#DEDEDE;white-space:nowrap;overflow:hidden;}
+
+.cart_list{width:100%; clear:both; color:#4c7258; height:100%;}
+.cart_list li{border-bottom:1px solid #DDD;overflow:hidden;}
+.cart_goods_name{font-size:18px;display:block; color:#4c7258;}
+.cart_goods_attr{font-size:16px;display:block;margin-top:5px;}
+.cart_goods_price{font-size:16px;display:block;margin-top:5px; color:#e47b5d;}
+.cart_goods_tips{font-size:16px;display:block;margin-top:5px;}
+
+.accessory_list{ width:100%;clear:both;}
+.accessory_list li,.exchange_list li{border-bottom:1px solid #d9e2dd;overflow:hidden;padding:5px 5px;}
+
+.accessory_title{background-color:#DDD8D4;padding:5px 10px;font-siz:16px;margin-bottom:5px;}
+.accessory_goods_name{color:#5C5D61;font-size:17px;}
+.accessory_goods_price{color:#5C5D61;font-size:17px;}
+.btn9,.btn9:visited{cursor:pointer;border:none;background-color:#FFF;font-size:15px;padding:8px 30px;color:#FFF;font-weight:bold;color:#555;border:1px solid #d9e2dd;display:inline-block;white-space:nowrap;}

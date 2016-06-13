@@ -1,0 +1,157 @@
+/*商品详情页*/
+#wrapper{
+	bottom:55px;
+}
+/*轮播*/
+#cake-slide {
+	max-width: 640px;
+	padding: 0;
+}
+.cakecort{
+	padding:0 8px;
+}
+.cakecort_top{
+	margin-top:14px;
+	padding-bottom:30px;
+}
+.cakecort_top h3{
+	font-size:17px;
+	color:#4c7258;
+	margin-bottom:6px;
+}
+.cakecort_top i{
+	font-size:19px;
+	color:#e47b5d;
+}
+.cakecort_top p{
+	margin-top:4px;
+	font-size:12px;
+	line-height:20px;
+	color:#5b7d66;
+}
+.size_choose{
+	margin-bottom:15px;
+}
+.size_choose li{
+	width:70%;
+	height:39px;
+	line-height:39px;
+	text-align:center;
+	border:1px solid #d9e2dd;
+	background:#fff;
+	margin-top:10px;
+	font-size:12px;
+	color:#4c7258;
+}
+.size_choose .size_click{
+	background:#fff url(../img/list/dagou.png) no-repeat right bottom;
+	background-size:15px auto;
+	border:1px solid #e97c5d;
+}
+.buynum{
+	font-size:0;
+}
+.buynum strong,.buynum span,.buynum input{
+	vertical-align:middle;
+	font-size:12px;
+	color:#4c7258;
+	display:inline-block;
+}
+.buynum span{
+	margin-right:8px;
+}
+.buynum strong{
+	font-size:16px;
+	font-weight:bold;
+	width:35px;
+	height:35px;
+	line-height:33px;
+	text-align:center;
+	border:1px solid #d9e2dd;
+	background:#fff;
+}
+.buynum input{
+	border:1px solid #d9e2dd;
+	border-left:none;
+	border-right:none;
+	padding:8.5px 0;
+	width:35px;
+	text-align:center;
+}
+/*详情评论切换*/
+.cakecort_otherchoose{
+	border-bottom:1px solid #b2c4b7;
+	height:30px;
+	font-size:0;
+}
+.cakecort_otherchoose a{
+	display:inline-block;
+	width:50%;
+	height:30px;
+	text-align:center;
+	font-size:16px;
+	color:#4c7258;
+}
+.cakecort_otherchoose .choose_click{
+	border-bottom:1px solid #e97c5d;
+	color:#e97c5d;
+}
+/*详情*/
+.cakebottom_same{
+	margin-top:12px;	
+	display:none;
+}
+.cakebottom_word{
+	display:block;
+	padding:0 5px 20px;
+	font-size:12px;
+	color:#4c7258;
+	line-height:22px;
+}
+.cakebottom_word h3{
+	font-weight:bold;
+}
+/*评论*/
+.cakebottom_ask{
+	padding-bottom:40px;
+}
+.cakebottom_ask li{
+	font-size:12px;
+	color:#4c7258;
+	line-height:22px;
+	padding:14px 5px;
+	border-top:1px solid #b2c4b7;
+}
+.cakebottom_ask li:first-child{
+	padding-top:0;
+	border:none;
+}
+.cakebottom_ask h3{
+	color:#e97c5d;
+}
+/*购物车悬浮窗*/
+.shopfixed{
+	width:100%;
+	position:absolute;
+	left:0;
+	bottom:0;
+	height:55px;
+	line-height:53px;
+	border-top:1px solid #d9e2dd;
+	background:#fff;
+	font-size:0;
+	text-align:center;
+	z-index:4;
+}
+.shopfixed a{
+	display:inline-block;
+	vertical-align:middle;
+	width:40%;
+	max-width:100px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background:#e97c5d;
+	font-size:14px;
+	color:#fff;
+}

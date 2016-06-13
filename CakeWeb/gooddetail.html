@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/buy.css" />
+    <script src="mjs/jquery-1.6.4.min.js"></script>
+</head>
+<body>
+    <div class="allcort">
+        <!--头部begin-->
+        <div class="header">
+            <a href="http://m.makacake.com/" class="tohome fl"></a>
+            <span>商品详情</span>
+            <a href="mycart.aspx" class="header_right shopcart_r">
+            </a>
+        </div>
+        <!--头部end-->
+        <div id="wrapper">
+            <div id="scroller">
+                <div class="container">
+                    <div class="cake-main">
+                        <!--轮播图begin-->
+                        <div id="cake-slide" class="slideBox">
+                            <div class="bd">
+                                <div class="tempWrap" >
+                                    <ul id="detailbanner"></ul>
+                                </div>
+                            </div>
+                            <div class="hd">
+                                <ul class="fix"></ul>
+                            </div>
+                        </div>
+                        <!--轮播图end-->
+                        <!--商品-->
+                        <div class="cakecort">
+                            <!--商品参数-->
+                            <div class="cakecort_top">
+                                <h3 id="producttitle"></h3>
+                                <i id="productprice"></i>
+                                <p>现在订购最早 今天 21:30 配送,每日最晚配送时间22:00</p>
+                                <ul class="size_choose">
+                                    <li class="size_click">1.0磅:约13×13(cm) 454g【198元】 </li>
+                                    <li>1.0磅:约13×13(cm) 454g【198元】 </li>
+                                    <li>1.0磅:约13×13(cm) 454g【198元】 </li>
+                                </ul>
+                                <div class="fix">
+                                    <div class="buynum fr">
+                                        <span>购买数量 </span>
+                                        <strong id="toreduce">-</strong>
+                                        <input type="text" value="1" maxlength="5" />
+                                        <strong id="toadd">+</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--商品参数end-->
+                            <!--详情以及评论-->
+                            <div class="cakecort_bottom">
+                                <!--详情以及评论切换-->
+                                <div class="cakecort_otherchoose">
+                                    <a href="javascript:;" class="choose_click">商品详情</a>
+                                    <a href="javascript:;">用户评论</a>
+                                </div>
+                                <!--详情以及评论切换end-->
+                                <!--切换内容-->
+                                <div class="cakebottom_cort">
+                                    <!--详情-->
+                                    <div class="cakebottom_same cakebottom_word" id="productcontent">
+                                       
+                                    </div>
+                                    <!--详情end-->
+                                    <!--评论-->
+                                    <ul class="cakebottom_same cakebottom_ask">
+                                        <li>
+                                            <h3>3f*********f（2016-03-28 13:31）</h3>
+                                            <div>蛋糕口味：★★★★☆</div>
+                                            <p>最上面一层比较甜 比较黏 不太符合我的口味 家里人都挺喜欢的 内馅也有干果碎 总而言之挺不错的 下次试试别的</p>
+                                        </li>
+                                        <li>
+                                            <h3>3f*********f（2016-03-28 13:31）</h3>
+                                            <div>蛋糕口味：★★★★☆</div>
+                                            <p>最上面一层比较甜 比较黏 不太符合我的口味 家里人都挺喜欢的 内馅也有干果碎 总而言之挺不错的 下次试试别的</p>
+                                        </li>
+                                    </ul>
+                                    <!--详情end-->
+                                </div>
+                                <!--切换内容end-->
+                            </div>
+                            <!--详情以及评论end-->
+                        </div>
+                        <!--商品end-->
+                    </div>
+                    <!--底部begin-->
+                    <footer>
+                        <div class="cakephone">
+                            <a href="tel:3652 0763" mce_href="tel:3652 0763">3652 0763</a>
+                        </div>
+                        <div class="cakestatement">
+                            © 2016 m.makacake.com     沪ICP备08011593号
+                        </div>
+                    </footer>
+                    <!--底部end-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--购物车等悬浮-->
+    <div class="shopfixed">
+        <a href="javascript:;" id="joinshop">加入购物车</a>
+    </div>
+    <!--购物车等悬浮end-->
+    <!--阴影层-->
+    <div class="dr_blackwall"></div>
+    <!--阴影层end-->
+    <!--登录弹窗-->
+    <div class="login_tc">
+        <div class="logintc_close"></div>
+        <!--详情以及评论切换-->
+        <div class="logintc_tab">
+            <a href="javascript:;" class="choose_click">手机号快捷下单</a>
+            <a href="javascript:;">帐号登录</a>
+        </div>
+        <!--详情以及评论切换end-->
+        <div class="logintc_cort">
+            <!--快捷下单-->
+            <div class="login_tcsame" style="display: block;">
+                <div class="logintc_input">
+                    <input type="text" placeholder="请输入您的手机号码" />
+                </div>
+                <div class="logintc_input logintc_spinput">
+                    <input type="text" placeholder="请输入验证码" />
+                    <a href="javascript:;" class="logintc_phonecode">发送验证码</a>
+                    <!--<a href="javascript:;" class="logintc_phonecode code_reget">60秒后重新获取</a>-->
+                </div>
+                <div class="cakebtn loginTc_btn">
+                    <a href="javascript:;" class="cakebtn_bg" id="tc_register">登录</a>
+                </div>
+            </div>
+            <!--快捷下单end-->
+            <!--账号登录-->
+            <div class="login_tcsame">
+                <div class="logintc_input">
+                    <input type="text" placeholder="请输入您的手机号码" />
+                </div>
+                <div class="logintc_input">
+                    <input type="password" placeholder="请输入密码" />
+                </div>
+                <div class="cakebtn loginTc_spbtn">
+                    <a href="javascript:;" class="cakebtn_bg">登录</a>
+                    <a href="javascript:;" class="cakebtn_border">注册</a>
+                    <a href="javascript:;" class="forgetPW">忘记密码?</a>
+                </div>
+            </div>
+            <!--账号登录end-->
+        </div>
+    </div>
+    <!--登录弹窗end-->
+    <!--JS begin-->
+
+    <script>
+        $(function () {
+            var pid = GetQueryString("pid");
+           // alert(pid);
+            if (pid != null && pid.toString().length >= 1) {
+               //alert(pid);
+                $.post("mapi/goodsapi.ashx", { action: "get",pid:pid }, function (data) {
+                    if (data != "fail") {
+                        var userlist = $.parseJSON(data); //解析JSON
+                       // $("#detailbanner").append("<ul data-role='listview'></ul>");
+                        var temp = "<li><a href='javascript:none'> <img alt='' src='" + userlist["Imgurl1"] + "'></a></li>";
+                        temp = temp + "<li><a href='javascript:none'> <img alt='' src='" + userlist["Imgurl2"] + "'></a></li>";
+                        temp = temp + "<li><a href='javascript:none'> <img alt='' src='" + userlist["Imgurl3"] + "'></a></li>";
+                        document.getElementById("detailbanner").innerHTML = temp;
+                        document.getElementById("producttitle").innerHTML = userlist["ProductTitle"];
+                        document.getElementById("productprice").innerHTML = userlist["Price"] + "元";
+                        document.getElementById("productcontent").innerHTML = userlist["ProductContent"];
+                        
+                        
+                    }
+                })
+            }
+           
+        })
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    </script>
+    <script src="js/seajs/sea.js"></script>
+    <script>
+// seajs 配置
+seajs.config({
+	debug: true,
+	base: "./",
+	alias: {
+	  "zepto": "js/lib/zepto/zepto.js",
+	  "iscroll": "js/lib/iscroll/iscroll.js"
+	}
+});
+// 加载入口模块
+seajs.use("js/page/common");
+seajs.use("js/page/buy");
+    </script>
+</body>
+</html>

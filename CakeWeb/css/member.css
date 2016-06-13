@@ -1,0 +1,284 @@
+/*会员中心*/
+.MBCort{
+	padding-bottom:45px;
+}
+.homeright{
+	left:auto;
+	right:8px;
+}
+.mbcort_bk{
+	background:url(../img/member/mb_bk.jpg) no-repeat center center;
+	background-size:100% auto;
+	height:100px;
+	position:relative;
+}
+.mbbk_img{
+	width:50px;
+	margin-left:25px;
+	margin-top:22px;
+}
+.mbbk_img img{
+	width:100%;
+}
+.mbbk_word{
+	margin-top:15px;
+	margin-left:8px;
+	font-size:16px;
+	color:#597d64;
+	line-height:22px;
+}
+.mbbk_word i{
+	color:#e68b71;
+}
+.member_list{
+	background:#fff;
+	margin:7px 0 18px;
+}
+.member_list a{
+	display:block;
+	font-size:16px;
+	color:#4c7258;
+	height:46px;
+	line-height:46px;
+	border-top:1px solid #ebf5ee;
+	padding-left:20px;
+	background:url(../img/common/green_arow.png) no-repeat 95% center;
+	background-size:8px auto;
+}
+.member_list a:first-child{
+	border:none;
+}
+.member_list span{
+	background-repeat:no-repeat;
+	background-size:21px auto;
+	background-position:0 center;
+	padding-left:35px;
+	display:inline-block;
+}
+.mblist_one span{
+	background-image:url(../img/member/icon1.png);
+}
+.mblist_two span{
+	background-image:url(../img/member/icon2.png);
+}
+.mblist_three span{
+	background-image:url(../img/member/icon3.png);
+}
+.mblist_four span{
+	background-image:url(../img/member/icon4.png);
+}
+.mblist_five span{
+	background-image:url(../img/member/icon5.png);
+}
+/*会员权益*/
+.equityCort{
+	padding:0 8px 30px;	
+}
+.cake_equitychoose{
+	margin-top:22px;
+	border-bottom:1px solid #b2c4b7;
+	height:30px;
+	font-size:0;
+	margin-bottom:8px;
+}
+.cake_equitychoose a{
+	display:inline-block;
+	width:50%;
+	height:30px;
+	text-align:center;
+	font-size:16px;
+	color:#4c7258;
+}
+.cake_equitychoose .equity_click{
+	border-bottom:1px solid #e97c5d;
+	color:#e97c5d;
+}
+.equity_whrite{
+	background:#fff;
+}
+.equity_same{
+	padding:14px 8px;
+	border-bottom:1px solid #ebf5ee;
+	color:#4c7258;
+	font-size:12px;
+	line-height:24px;
+}
+.equity_same h3{
+	font-size:18px;
+	margin-bottom:4px;
+}
+.equity_ps{
+	font-size:12px;
+	color:#4c7258;
+	line-height:20px;
+	margin-top:6px;
+}
+.equity_all{
+	font-size:12px;
+	color:#4c7258;
+	line-height:24px;
+	padding:8px 7px;
+}
+/*我的订单*/
+.mb_detail{
+	background:#fff;
+	margin:7px 9px 0;
+}
+.detail_same{
+	position:relative;
+	border-bottom:1px solid #d9e2dd;
+	padding:13px 9px;
+	font-size:14px;
+	color:#4c7258;
+	line-height:24px;
+}
+.detail_num .fl{
+	font-size:16px;
+	color:#4c7258;
+}
+.detail_same i{
+	color:#e68b71;
+}
+.detail_num .fr{
+	font-size:16px;
+	color:#4c7258;
+	background:url(../img/common/green_arow.png) no-repeat right center;
+	background-size:8px auto;
+	padding-right:15px;
+}
+.detail_cp .fix{
+	margin-bottom:6px;
+}
+.detail_button{
+	font-size:0;
+	text-align:right;
+	padding:15px 0;
+	overflow:hidden;
+	margin-right:3%;
+}
+.detail_button a{
+	display:inline-block;
+	width:42%;
+	vertical-align:middle;
+	margin:0 3%;
+}
+.detail_num .qx_derail{
+	background:none;
+	color:#e68b71;
+	padding:0;
+}
+.haveborder{
+	text-decoration:underline;
+	margin-left:13px;
+}
+.detail_twocp .fix{
+	margin-bottom:3px;
+}
+.detail_twocp em{
+	color:#b4c8ba;
+}
+.detail_button i{
+	font-size:14px;
+	color:#e68b71;
+	padding-left:9px;
+	margin-top:15px;
+}
+/*评价晒单*/
+/*商品*/
+.theshoplist{
+	padding:0 3px;
+	margin-bottom:28px;
+}
+.theshoplist li{
+	overflow:hidden;
+	background:#fff;
+	margin-top:8px;
+	position:relative;
+}
+.theshopImg{
+	width:40%;
+}
+.theshopImg img{
+	width:100%;
+}
+.theshopWord{
+	width:58%;
+	color:#4c7258;
+	margin-top:18px;
+	padding-right:10px;
+}
+.theshopWord h3{
+	font-size:16px;
+	margin-bottom:8px;
+}
+.theshopWord p{
+	font-size:12px;
+	margin-bottom:18px;
+	line-height:20px;
+}
+.theshopWord strong{
+	display:inline-block;
+	margin-top:6px;
+	font-size:16px;
+	font-weight:bold;
+	color:#e47b5d;
+}
+.toask{
+	display:inline-block;
+	width:104px;
+	height:30px;
+	line-height:27px;
+	text-align:center;
+	border:1px solid #e68b71;
+	color:#e68b71;
+	font-size:16px;
+}
+.toask span{
+	background:url(../img/member/write.png) no-repeat left center;
+	background-size:17px auto;
+	padding-left:20px;
+}
+.evaluate{
+	width:54%;
+	font-size:16px;
+	color:#4c7258;
+	margin-top:17px;
+}
+.starlist{
+	margin-top:12px;
+	font-size:0;
+}
+.starlist i{
+	display:inline-block;
+	background:url(../img/member/star.png) no-repeat;
+	width:18px;
+	height:17px;
+	background-size:100% auto;
+	margin-right:2px;
+}
+.starlist .addstar{
+	background:url(../img/member/greenstar.png) no-repeat;
+	background-size:100% auto;
+}
+.evaluate_wirte{
+	clear:both;
+	border-top:1px solid #ebf5ee;
+	padding:14px;
+}
+.evaluate_wirte textarea{
+	outline:none;
+	resize:none;
+	border:none;
+	width:100%;
+	font-size:12px;
+	color:#b4c8ba;
+	font-family:"microsoft yahei";
+	line-height:22px;
+	height:120px;
+}
+.evaluate_btn{
+	padding:0 70px;
+	margin-bottom:40px;
+}
+
+

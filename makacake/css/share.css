@@ -1,0 +1,112 @@
+/*分享页面的css*/
+html,body{
+	height:100%;
+	overflow:hidden;
+	background:#fff;
+}
+.shareImg img{
+	width:100%;
+}
+/*分享的渠道*/
+.Toshare_cort{
+	padding:0 7px;
+}
+.Toshare_cort h3{
+	font-size:14px;
+	color:#597d64;
+	margin:12px 0;
+	padding-left:10px;
+}
+.Toshare_all li{
+	float:left;
+	width:25%;
+	text-align:center;
+}
+.Toshare_all a{
+	display:inline-block;
+}
+.Toshare_all img{
+	display:block;
+	width:100%;
+	max-width:60px;
+	margin-bottom:10px;
+}
+.Toshare_all span{
+	color:#666;
+	font-size:18px;
+}
+.Toshare_bottom{
+	height:56px;
+	line-height:56px;
+	text-align:center;
+	font-size:14px;
+	color:#597d64;
+	border-top:1px solid #d9e1db;
+	margin-top:22%;
+}
+.shareSpImg{
+	position:relative;
+}
+.shareSpImg p{
+	position:absolute;
+	font-size:18px;
+	color:#597d64;
+	line-height:32px;
+	width:100%;
+	text-align:center;
+	left:0;
+	bottom:9%;
+}
+.shareSpImg strong{
+	font-size:22px;
+}
+.share_input{
+	padding:0 10px;
+	margin-top:20px;
+}
+.share_input input{
+	width:100%;
+	padding:8px 0;
+	border:1px solid #ccc;
+	font-size:18px;
+	text-align:center;
+	margin-bottom:20px;
+}
+/*领取成功页*/
+.share_spcort{
+	height:100%;
+}
+.share_sucess{
+	height:100%;
+	background:url(../img/share/bk.jpg) no-repeat;
+	background-size:cover;
+	position:relative;
+	text-align:center;
+}
+.share_sucess img{
+	width:80%;
+	max-width:196px;
+	margin-top:20%;
+}
+.share_sucess p{
+	font-size:17px;
+	color:#597d64;
+	line-height:30px;
+	margin-bottom:8px;
+	margin-top:16px;
+}
+.share_sucess span{
+	font-size:14px;
+	color:#597d64;
+}
+.sharesucess_btn{
+	padding:0 9px;
+	margin-top:12%;
+}
+.Toshare_Spbottom{
+	margin:0;
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+}
