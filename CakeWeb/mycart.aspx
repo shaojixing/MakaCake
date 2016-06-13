@@ -18,12 +18,12 @@
 			<table width="100%" cellspacing="10" cellpadding="0">
 			<tbody><tr>
 				<td width="35%" align="left" valign="top">
-					<a style="display:inline-block;" href="productdetail.aspx?wd=<%#Eval("ProductId") %> "><img  src="<%#Eval("ImgUrl") %>" style="width:224px;"></a>
+					<a style="display:inline-block;" href="gooddetail.html?pid=<%#Eval("ProductId") %> "><img  src="<%#Eval("ImgUrl") %>" style="width:224px;"></a>
 				</td>
 				<td valign="top">
-					<a class="cart_goods_name" href="productdetail.aspx?wd=<%#Eval("ProductId") %> "><%#Eval("ProductName") %></a>
+					<a class="cart_goods_name" href="gooddetail.html?pid=<%#Eval("ProductId") %> "><%#Eval("ProductName") %></a>
 					<span class="cart_goods_attr"><%#Eval("Specification") %>.0磅:约13×13(cm)  454g</span>
-										<a class="cart_goods_price" href="productdetail.aspx?wd=<%#Eval("ProductId") %> "><%#Eval("ProductPrice") %>元</a>
+										<a class="cart_goods_price" href="gooddetail.html?pid=<%#Eval("ProductId") %> "><%#Eval("ProductPrice") %>元</a>
 										<span class="cart_goods_tips">每磅蛋糕赠送5套叉碟</span>										<br>		
 									</td>
 				<td width="4%">
@@ -45,15 +45,15 @@
 			
 			<table width="100%">
 				<tbody><tr>
-					<td width="25%" align="left" valign="top"><a style="display:inline-block;" href="productdetail.aspx?wd=<%#Eval("Id") %>"><img width="95%" style="border:1px solid #BBB;" src="<%#Eval("ImgUrl1") %>"></a></td>
+					<td width="25%" align="left" valign="top"><a style="display:inline-block;" href="gooddetail.html?pid=<%#Eval("Id") %>"><img width="95%" style="border:1px solid #BBB;" src="<%#Eval("ImgUrl1") %>"></a></td>
 					<td align="left" valign="top" style="padding:10px;">
 						<table width="100%">
 							<tbody><tr>
 								<td width="50%">
-									<a class="accessory_goods_name" style="color:#5C5D61;" href="productdetail.aspx?wd=<%#Eval("Id") %> "><%#Eval("ProductTitle") %></a>
+									<a class="accessory_goods_name" style="color:#5C5D61;" href="gooddetail.html?pid=<%#Eval("Id") %> "><%#Eval("ProductTitle") %></a>
 								</td>
 								<td width="50%" align="left">
-									<a class="accessory_goods_price" style="color:#5C5D61;" href="productdetail.aspx?wd=<%#Eval("Id") %> "><%#Eval("Price") %>元/1人份</a>
+									<a class="accessory_goods_price" style="color:#5C5D61;" href="gooddetail.html?pid=<%#Eval("Id") %> "><%#Eval("Price") %>元/1人份</a>
                                   
 								</td>
 							</tr>

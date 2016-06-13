@@ -228,22 +228,22 @@
             })
         }
         
-        function addnum()
-        {
+        function addnum() {
+            // currentnumber = parseInt($("#productnum").val()) ;
+
+            document.getElementById("productnum").value = parseInt($("#productnum").val()) + 1;
             currentnumber = parseInt($("#productnum").val()) + 1;
-            
-            document.getElementById("productnum").value = currentnumber;
-            document.getElementById("productprice").innerHTML = currentprice * (currentnumber + 1);
-           
+            document.getElementById("productprice").innerHTML = currentprice * currentnumber;
+
         }
        
         function Lessnum() {
             currentnumber = parseInt($("#productnum").val());
             if (currentnum > 1) {
-                currentnumber = currentnumber - 1;
-                document.getElementById("productnum").value = currentnumber;
-
-                document.getElementById("productprice").innerHTML = currentprice * (currentnumber - 1);
+                //  currentnumber = currentnumber - 1;
+                document.getElementById("productnum").value = parseInt($("#productnum").val()) - 1;
+                currentnumber = parseInt($("#productnum").val()) - 1;
+                document.getElementById("productprice").innerHTML = currentprice * currentnumber;
 
             }
             else {
@@ -253,9 +253,12 @@
         function selectdetail(key,price)
         {
             detailId = key;
+            currentnumber = 1;
+            document.getElementById("productnum").value = currentnumber;
             $(".size_click").removeClass('size_click');
             $("#spec_" + key).addClass('size_click');
             currentprice = parseInt(price);
+            currentprice = price;
             document.getElementById("productprice").innerHTML = currentprice;
             document.getElementById("productnum").value = 1;
         }

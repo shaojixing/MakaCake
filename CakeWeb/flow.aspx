@@ -41,13 +41,13 @@
                                <ItemTemplate>
 							<table width="100%" cellpadding="10">
 										<tbody><tr>
-						<td width="30%"><a style="display:inline-block;" href="productdetail.aspx?wd=<%#Eval("ProductId") %>"><img width="100%" src="<%#Eval("ImgUrl") %>"></a></td>
+						<td width="30%"><a style="display:inline-block;" href="gooddetail.html?pid=<%#Eval("ProductId") %>"><img width="100%" src="<%#Eval("ImgUrl") %>"></a></td>
 						<td valign="top">
 							<table width="100%" cellpadding="0" cellspacing="0">
 								<tbody><tr>
 									<td>
-										<p class="goods_name"><a href="productdetail.aspx?wd=<%#Eval("ProductId") %>"><%#Eval("ProductName") %></a></p>
-										<p class="goods_attr"><a href="productdetail.aspx?wd=<%#Eval("ProductId") %>"><%#Eval("Specification") %>.0磅:约<%#Eval("Size") %></a></p>
+										<p class="goods_name"><a href="gooddetail.html?pid=<%#Eval("ProductId") %>"><%#Eval("ProductName") %></a></p>
+										<p class="goods_attr"><a href="gooddetail.html?pid=<%#Eval("ProductId") %>"><%#Eval("Specification") %>.0磅:约<%#Eval("Size") %></a></p>
 									</td>
 									<td align="right">
 																				<%#Eval("ProductPrice") %>元																				<br>
