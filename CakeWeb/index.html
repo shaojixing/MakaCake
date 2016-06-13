@@ -7,13 +7,14 @@
     <meta name="Keywords" content="深圳蛋糕、裸蛋糕、马卡烤箱、深圳最好吃的蛋糕、马卡烤箱蛋糕、深圳预定蛋糕、深圳订蛋糕、深圳配送蛋糕、一磅蛋糕多少钱、深圳生日蛋糕、马卡烤箱——只做裸蛋糕。" />
 	<link rel="stylesheet" href="css/common.css" />
 	<link rel="stylesheet" href="css/index.css" />
+    <script src="mjs/jquery-1.6.4.min.js"></script>
 </head>
 <body>
 <div class="allcort">
 <!--头部begin-->
 <div class="header indexHead">
 	<a href="mycart.aspx" class="header_right shopcart_r">
-		<span></span>
+		<span>0</span>
 	</a>
 </div>
 <!--头部end-->
@@ -55,7 +56,7 @@
                     <a class="tmBg1" href="goodslist.html">所有蛋糕</a>
                     <a class="tmBg2" href="goodslist.html">商品分类</a>
                     <a class="tmBg3" href="equity_personal.html">免费试吃</a>
-                    <a class="tmBg4" href="numbercenter.aspx">会员请进</a>
+                    <span id="memberlogin"><a class="tmBg4" href="numbercenter.aspx">会员请进</a></span>  
 				</div>
 				<!--绿色背景-->
 				<div class="greencort">
@@ -106,6 +107,19 @@
 <!--JS begin-->
 <script src="js/seajs/sea.js"></script>
 <script>
+    $.post("mapi/memberapi.ashx", { action: "islogin" }, function (data) {
+      //  alert(data);
+        if (data == "True")
+        {
+            document.getElementById("memberlogin").innerHTML = "<a class='tmBg4' href='numbercenter.aspx'>会员请进</a>";
+        }
+        else
+        {
+            document.getElementById("memberlogin").innerHTML = "<a class='tmBg4' href='login_personal.html'>登陆注册</a>";
+        }
+        
+
+    })
 // seajs 配置
 seajs.config({
 	debug: true,

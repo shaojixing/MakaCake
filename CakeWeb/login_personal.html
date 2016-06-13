@@ -51,13 +51,15 @@
                     <span></span>
                   
                 </div>
-            </div>
-				<!--登录按钮begin-->
-				<div class="cakelogin_btn cakebtn">
+                <!--登录按钮begin-->
+                <div class="cakelogin_btn cakebtn">
                     <span id="btnLogin" class="cakebtn_bg">登录</span>
-					<a href="register_personal.html" class="cakebtn_border">注册</a>
-				</div>
-				<!--登录按钮end-->
+                  
+                    <a href="register_personal.html" class="cakebtn_border">注册</a>
+                </div>
+                <!--登录按钮end-->
+            </div>
+				
 
 			</div>
 			<!--底部begin-->
@@ -136,6 +138,16 @@
             })
         })
     })
+    function weixinlogin()
+    {
+        $.post("wx/wx.aspx", { mobile: mobile, pwd: pwd }, function (data) {
+            alert(data);
+            switch (data)
+            {
+
+            }
+        })
+    }
 </script>
 <script src="js/seajs/sea.js"></script>
 <script>
