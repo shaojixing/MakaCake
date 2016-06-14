@@ -9,6 +9,22 @@ namespace Cake_Dal
 {
    public class AdminDal
     {
+       public bool AddAdmin(T_Admin model)
+       {
+           using (var db = new cakedbEntities())
+           {
+               db.T_Admin.Add(model);
+               return db.SaveChanges() > 0;
+           }
+       }
+
+       public T_Admin GetAdminByToken(string token)
+       {
+           using (var db = new cakedbEntities())
+           {
+               return db.T_Admin.Where(t => t.admintoken==token).FirstOrDefault();
+           }
+       }
        public T_Admin GetAdminModel(int id)
        {
 

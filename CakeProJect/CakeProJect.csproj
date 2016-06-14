@@ -96,11 +96,45 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddUser.aspx" />
+    <Content Include="css\font\adminthemes-webfont.eot" />
+    <Content Include="css\font\adminthemes-webfont.ttf" />
+    <Content Include="css\font\adminthemes-webfont.woff" />
+    <Content Include="css\font\adminthemes-webfont.woff2" />
+    <Content Include="api\loginapi.ashx" />
     <None Include="Properties\PublishProfiles\aaa.pubxml" />
+    <Content Include="css\font\adminthemes-webfont.svg" />
+    <Content Include="css\jquery.mCustomScrollbar.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\tab-view.css" />
     <Content Include="detail.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="images\admin_logo.png" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\close_over.gif" />
+    <Content Include="images\icon\apple-touch-icon-120x120-precomposed.png" />
+    <Content Include="images\icon\apple-touch-icon-196x196-precomposed.png" />
+    <Content Include="images\icon\apple-touch-icon-57x57-precomposed.png" />
+    <Content Include="images\icon\DefaultAvatar.jpg" />
+    <Content Include="images\icon\favicon.ico" />
+    <Content Include="images\tab_left_active.gif" />
+    <Content Include="images\tab_left_inactive.gif" />
+    <Content Include="images\tab_left_over.gif" />
+    <Content Include="images\tab_right_active.gif" />
+    <Content Include="images\tab_right_inactive.gif" />
+    <Content Include="images\tab_right_over.gif" />
     <Content Include="index.aspx" />
+    <Content Include="js\ajax.js" />
+    <Content Include="js\html5.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="js\Particleground.js" />
+    <Content Include="js\tab-view.js" />
+    <Content Include="js\verificationNumbers.js" />
+    <Content Include="login.html" />
+    <Content Include="productdetial.aspx" />
+    <Content Include="productlist.aspx" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -110,6 +144,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\loginapi.ashx.cs">
+      <DependentUpon>loginapi.ashx</DependentUpon>
+    </Compile>
     <Compile Include="detail.aspx.cs">
       <DependentUpon>detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,9 +171,25 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="productdetial.aspx.cs">
+      <DependentUpon>productdetial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productdetial.aspx.designer.cs">
+      <DependentUpon>productdetial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productlist.aspx.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productlist.aspx.designer.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

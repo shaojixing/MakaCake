@@ -26,7 +26,6 @@ namespace Cake_Model
         }
     
         public virtual DbSet<T_Address> T_Address { get; set; }
-        public virtual DbSet<T_Admin> T_Admin { get; set; }
         public virtual DbSet<T_Content> T_Content { get; set; }
         public virtual DbSet<T_ContentCategory> T_ContentCategory { get; set; }
         public virtual DbSet<T_IntegralLog> T_IntegralLog { get; set; }
@@ -41,5 +40,6 @@ namespace Cake_Model
         public virtual DbSet<T_Cart> T_Cart { get; set; }
         public virtual DbSet<T_Order> T_Order { get; set; }
         public virtual DbSet<T_OrderLog> T_OrderLog { get; set; }
+        public virtual DbSet<T_Admin> T_Admin { get; set; }
     }
 }

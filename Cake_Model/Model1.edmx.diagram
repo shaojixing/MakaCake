@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="9271901584624aabb4f02aed02a3a184" Name="Diagram1" ZoomLevel="61">
         <EntityTypeShape EntityType="cakedbModel.T_Address" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cakedbModel.T_Admin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cakedbModel.T_Content" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cakedbModel.T_ContentCategory" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cakedbModel.T_IntegralLog" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
@@ -21,6 +20,7 @@
         <EntityTypeShape EntityType="cakedbModel.T_Cart" Width="1.5" PointX="0.75" PointY="12.75" />
         <EntityTypeShape EntityType="cakedbModel.T_Order" Width="1.5" PointX="9.375" PointY="8.75" />
         <EntityTypeShape EntityType="cakedbModel.T_OrderLog" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="cakedbModel.T_Admin" Width="1.5" PointX="11.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

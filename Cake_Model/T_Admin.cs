@@ -24,5 +24,6 @@ namespace Cake_Model
         public string LoginIP { get; set; }
         public string RealName { get; set; }
         public string Email { get; set; }
+        public string admintoken { get; set; }
     }
 }

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cake_Bll">
+      <HintPath>..\Cake_Bll\bin\Debug\Cake_Bll.dll</HintPath>
+    </Reference>
     <Reference Include="Cake_Model">
       <HintPath>..\Cake_Model\bin\Debug\Cake_Model.dll</HintPath>
     </Reference>
@@ -45,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLoginHelper.cs" />
     <Compile Include="CookieHelper.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="MD5Helper.cs" />

@@ -34,6 +34,7 @@
           <Property Name="LoginIP" Type="varchar" MaxLength="30" />
           <Property Name="RealName" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="admintoken" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="T_Cart">
           <Key>
@@ -283,21 +284,6 @@
           <Property Name="CreateDate" Type="DateTime" Precision="0" />
           <Property Name="CreateIP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="T_Admin">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CreateDate" Type="DateTime" Precision="0" />
-          <Property Name="Competence" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="LoginDate" Type="DateTime" Precision="0" />
-          <Property Name="LoginIP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="RealName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="T_Content">
           <Key>
             <PropertyRef Name="Id" />
@@ -381,7 +367,6 @@
         </EntityType>
         <EntityContainer Name="cakedbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="T_Address" EntityType="Self.T_Address" />
-          <EntitySet Name="T_Admin" EntityType="Self.T_Admin" />
           <EntitySet Name="T_Content" EntityType="Self.T_Content" />
           <EntitySet Name="T_ContentCategory" EntityType="Self.T_ContentCategory" />
           <EntitySet Name="T_IntegralLog" EntityType="Self.T_IntegralLog" />
@@ -396,6 +381,7 @@
           <EntitySet Name="T_Cart" EntityType="cakedbModel.T_Cart" />
           <EntitySet Name="T_Order" EntityType="cakedbModel.T_Order" />
           <EntitySet Name="T_OrderLog" EntityType="cakedbModel.T_OrderLog" />
+          <EntitySet Name="T_Admin" EntityType="cakedbModel.T_Admin" />
         </EntityContainer>
         <EntityType Name="T_ProductDetail">
           <Key>
@@ -515,6 +501,22 @@
           <Property Name="PayStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="T_Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="Competence" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LoginDate" Type="DateTime" Precision="0" />
+          <Property Name="LoginIP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RealName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="admintoken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -534,22 +536,6 @@
                 <ScalarProperty Name="Area" ColumnName="Area" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="CreateIP" ColumnName="CreateIP" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_Admin">
-            <EntityTypeMapping TypeName="cakedbModel.T_Admin">
-              <MappingFragment StoreEntitySet="T_Admin">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="Competence" ColumnName="Competence" />
-                <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
-                <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
-                <ScalarProperty Name="RealName" ColumnName="RealName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -762,6 +748,23 @@
                 <ScalarProperty Name="PayType" ColumnName="PayType" />
                 <ScalarProperty Name="PayCode" ColumnName="PayCode" />
                 <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Admin">
+            <EntityTypeMapping TypeName="cakedbModel.T_Admin">
+              <MappingFragment StoreEntitySet="T_Admin">
+                <ScalarProperty Name="admintoken" ColumnName="admintoken" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RealName" ColumnName="RealName" />
+                <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+                <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+                <ScalarProperty Name="Competence" ColumnName="Competence" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
