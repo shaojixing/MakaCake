@@ -19,19 +19,25 @@ namespace Cake_Dal
        }
        public bool UpdateUserByCode(T_User model)
        {
-           using (var db = new cakedbEntities())
-           {
+           //using (var db = new cakedbEntities())
+           //{
                model.InvitationNumber += 1;
                model.GradeName = Gard(model.InvitationNumber, (int)model.OrderPrice, model.MaKaCurrency);
-               return db.SaveChanges() > 0;
-           }
+               //return db.SaveChanges() > 0;
+           //}
+            return   UpdateUser(model);
        }
 
        public bool UpdateUser(T_User model)
        {
            using (var db = new cakedbEntities())
            {
-              // model.m;
+
+               db.T_User.Attach(model);
+               db.Entry<T_User>(model).State = System.Data.Entity.EntityState.Modified;
+
+               //model.MaKaCurrency = makabi;
+               
                //model.GradeName = Gard(model.InvitationNumber, (int)model.OrderPrice, model.MaKaCurrency);
                return db.SaveChanges() > 0;
            }
