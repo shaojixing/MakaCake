@@ -72,15 +72,23 @@ define(function(require,exports,module){
 			});
 			
 			//自动删除隐藏
-			if(arg.hideTime){
+			if (arg.hideTime) {
+			  //  alert(arg.hideTime);
 				var hidetimer = null;
-				if(hidetimer){clearTimeout(hidetimer)}
-				hidetimer = setTimeout(function(){
+				if (hidetimer) {
+				    //alert(hidetimer);
+				    clearTimeout(hidetimer)
+				}
+				hidetimer = setTimeout(
+                   
+                    function () {
 					popObj.remove();
 					if(arg.callback){
 						arg.callback();
 					}
-				},arg.hideTime);
+				}, arg.hideTime);
+				//alert(hidetimer);
+				//setTimeout("alert('1')", 5000);
 			}
 			
 			if(arg.callback){

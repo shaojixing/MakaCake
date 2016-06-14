@@ -54,7 +54,7 @@
                 <!--登录按钮begin-->
                 <div class="cakelogin_btn cakebtn">
                     <span id="btnLogin" class="cakebtn_bg">登录</span>
-                  
+                    <a id="btnLogin1" style="background-color:#58a266" href="http://m.makacake.com/wx/wx.aspx" class="cakebtn_bg" >微信登录</a>
                     <a href="register_personal.html" class="cakebtn_border">注册</a>
                 </div>
                 <!--登录按钮end-->
@@ -94,7 +94,8 @@
         $(document).ready(function () {
             w = new Wrong();
         });
-    $(function () {
+        $(function () {
+            isWeiXin();
         $("#btnLogin").click(function () {
             showLoading();
             var mobile = $("#txtMobile").val();
@@ -138,15 +139,15 @@
             })
         })
     })
-    function weixinlogin()
-    {
-        $.post("wx/wx.aspx", { mobile: mobile, pwd: pwd }, function (data) {
-            alert(data);
-            switch (data)
-            {
-
-            }
-        })
+    
+    function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            document.getElementById("btnLogin1").style.display = "block";
+            // return true;
+        } else {
+            document.getElementById("btnLogin1").style.display = "none";
+        }
     }
 </script>
 <script src="js/seajs/sea.js"></script>

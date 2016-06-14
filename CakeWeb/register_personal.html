@@ -8,7 +8,9 @@
 	<link rel="stylesheet" href="css/login.css" />
     <script src="mjs/Wrong.js"></script>
     <script src="mjs/common.js"></script>
-    <script src="mjs/jquery-1.6.4.min.js"></script>
+
+    <script src="mjs/jquery.js"></script>
+
 </head>
 <body>
 <div class="allcort">
@@ -98,72 +100,51 @@
     });
     var timer = null;
 
-    $(function () {
-        $("#cake_register").click(function () {
-            showLoading();
-            var isShow = '1';
-            var mobile = $("#txtMobile").val();
-            if (mobile == "") {
-                hideLoading();
-                w.Show("手机号不能为空");
-                return;
-            }
+    //$(function () {
+    //    $("#cake_register").click(function () {
+    //    });
+    //})
 
-            if (!checkMobile(mobile)) {
+    function registerpersonal()
+    {
+        showLoading();
+        var mobile = $("#txtMobile").val();
+        
+        var pwd = $("#txtPwd").val();
+        var pwd1 = $("#txtPwd1").val();
+    
+        var code = $("#code").val();
+        $('#cake_register').attr("disabled", true);
+        $.post("mapi/registeredapi.ashx", { action: "personal", mobile: mobile, pwd: pwd, pwd1: pwd1, code: code }, function (data) {
+            // alert(data);
+            if (data == "sucess") {
                 hideLoading();
-                w.Show("手机号格式不正确");
-                return;
-            }
-            var pwd = $("#txtPwd").val();
-            var pwd1 = $("#txtPwd1").val();
-            if (pwd == "" || pwd1 == "") {
-                hideLoading();
-                w.Show("密码不能为空！");
-                $("#txtPwd1").val("");
-                return;
-            }
-
-          
-            if (pwd != pwd1) {
-                hideLoading();
-                w.Show("两次密码不一致！");
-                $("#txtPwd").val("");
-                $("#txtPwd1").val("");
-                return;
-            }
-            var code = $("#code").val();
-            $('#cake_register').attr("disabled", true);
-            $.post("mapi/registeredapi.ashx", { action: "personal", mobile: mobile, pwd: pwd, pwd1: pwd1, code: code }, function (data) {
-                // alert(data);
-                if (data == "sucess") {
-                    hideLoading();
-                    s.Show("注册成功,即将进行跳转！");
-                    $(":input").val("");
-                    var returnUrl = "";
-                    if (returnUrl != "") {
-                        window.location.href = returnUrl;
-                    } else {
-                        window.location.href = "http://m.makacake.com/";
-                    }
-                    return;
+              // alert("注册成功,即将进行跳转！");
+                $(":input").val("");
+                var returnUrl = "";
+                if (returnUrl != "") {
+                    window.location.href = returnUrl;
+                } else {
+                //     alert("注册成功,即将进行跳转！");
+                    window.location.href = "http://m.makacake.com/";
                 }
+                return;
+            }
 
-                $('#cake_register').attr("disabled", false);
-                if (data == "fail") {
-                    hideLoading();
-                    w.Show("注册失败！");
-                    return;
-                }
-                if (data == "false") {
-                    hideLoading();
-                    w.Show("手机号已注册！");
-                    return;
-                }
-
-            });
+            $('#cake_register').attr("disabled", false);
+            if (data == "fail") {
+                hideLoading();
+                alert("注册失败！,请联系客户：0755-3652 0763 ");
+                return;
+            }
+            if (data == "false") {
+                hideLoading();
+                alert("手机号已注册！");
+                return;
+            }
 
         });
-    })
+    }
     </script>
 
 <script src="js/seajs/sea.js"></script>
