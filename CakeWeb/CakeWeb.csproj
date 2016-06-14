@@ -190,6 +190,7 @@
     <Content Include="index.html" />
     <Content Include="js\lib\iscroll\iscroll.js" />
     <Content Include="js\lib\zepto\zepto.js" />
+    <Content Include="js\model\head.js" />
     <Content Include="js\model\model.js" />
     <Content Include="js\modules\confirmPop.js" />
     <Content Include="js\modules\face.js" />

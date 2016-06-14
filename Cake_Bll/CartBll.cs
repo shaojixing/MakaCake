@@ -49,6 +49,20 @@ namespace Cake_Bll
           return  cartdal.GetCartListByUserId(userid);
         }
 
+        public int GetCartNumByUserId(int userid)
+        {
+            CartDal cartdal = new CartDal();
+
+            if (cartdal.GetCartListByUserId(userid) != null)
+            {
+                return cartdal.GetCartListByUserId(userid).Count();
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         public bool DelCartById(int CartId)
         {
             CartDal cartdal = new CartDal();

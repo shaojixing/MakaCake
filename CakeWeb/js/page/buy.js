@@ -25,16 +25,22 @@ require('js/modules/TouchSlide.1.1.js');
     //点击增加数量
 	$('#toadd').off('touchstart').on('touchstart',function(){
 		var i = parseInt($('.buynum input').val());
-		$('.buynum input').val(i+1)
+		currentnumber = $('.buynum input').val(i + 1);
+		//alert(parseInt($('.buynum input').val()));
+		document.getElementById("productprice").innerHTML = danprice * parseInt($('.buynum input').val());;
+		currentprice = document.getElementById("productprice").innerHTML;
 	});
 	//点击减少数量
 	$('#toreduce').off('touchstart').on('touchstart',function(){
-		var i = parseInt($('.buynum input').val());
+	    var i = currentnumber=parseInt($('.buynum input').val());
 		if(i==1){
 			return false;
 		}else{
-			
-			$('.buynum input').val(i-1)
+		  // currentnumber=1
+		    $('.buynum input').val(i - 1)
+		    currentnumber = parseInt($('.buynum input').val());
+		    document.getElementById("productprice").innerHTML = danprice * currentnumber;
+		    currentprice = document.getElementById("productprice").innerHTML;
 		}
 	});
 	//点击tab切换内容

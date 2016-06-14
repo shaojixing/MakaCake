@@ -25,9 +25,35 @@ namespace CakeProJect.mobile.mapi
                 case "del":
                     DelCart(context);
                     break;
+                case "getnum":
+                    GetCart(context);
+                    break;
 
             }
             
+        }
+
+        private void GetCart(HttpContext context)
+        {
+            try
+            {
+                bool res = false;
+                CartBll cartbll = new CartBll();
+                UserBll userbll = new UserBll();
+                int userid = userbll.GetUserIdByToken();
+                if (userid != 0)
+                {
+                    context.Response.Write(cartbll.GetCartNumByUserId(userid).ToString());
+                }
+                else
+                {
+                    context.Response.Write("0");
+                }
+            }
+            catch
+            {
+                context.Response.Write("0");
+            }
         }
 
         private void DelCart(HttpContext context)

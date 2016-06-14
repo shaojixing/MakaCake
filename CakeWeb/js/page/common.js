@@ -48,3 +48,10 @@ var Popping = require('js/modules/popping.js');
 })(Zepto)
 
 });
+
+$(function () {
+    $.post("mapi/cartapi.ashx", { action: "getnum" }, function (data) {
+        $('.header_right span').html(data);
+    });
+
+});
