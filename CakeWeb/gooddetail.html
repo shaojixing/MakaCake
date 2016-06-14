@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/buy.css" />
     <script src="mjs/jquery-1.6.4.min.js"></script>
-   
+    <script src="mjs/common.js"></script>
 </head>
 <body>
     <div class="allcort">
@@ -37,8 +37,6 @@
                                         <li>
                                             <a href="javascript:;" id="img3"></a>
                                         </li>
-                                    
-
                                     </ul>
                                 </div>
                             </div>
@@ -117,9 +115,9 @@
     </div>
     <!--购物车等悬浮end-->
     <!--阴影层-->
-    <div class="dr_blackwall"></div>
+    <!--<div class="dr_blackwall"></div>-->
     <!--阴影层end-->
-    <div id="shade" style="width: 481px; height: 1597px; display: none; left: 0px; top: 0px;"></div>
+    <div id="shade" style="width: 100%; height: 100%; display: none; left: 0px; top: 0px;"></div>
     <div id="loading">
         <table width="100%">
             <tr>
@@ -139,11 +137,14 @@
         var currentnumber = 1;
         var detailId = "";
         var pid = "";
+        var danprice = 0;
         $(function () {
             pid = GetQueryString("pid");
             if (pid != null && pid.toString().length > 0) {
+                showLoading();
                 getproduct(pid);
                 getdetail(pid);
+                hideLoading();
                 getcommont(pid);
             }
         });
@@ -170,23 +171,26 @@
         }
         function getproduct(pid)
         {
-          
+         
             $.post("mapi/goodsapi.ashx", { action: "product", pid: pid }, function (data) {
 
                 if (data != "fail") {
                     var userlist = $.parseJSON(data); //解析JSON
-                    document.getElementById("img1").innerHTML = "<img alt='' src='" + userlist["Imgurl1"] + "'>";
-                    document.getElementById("img2").innerHTML = "<img alt='' src='" + userlist["Imgurl2"] + "'>";
-                    document.getElementById("img3").innerHTML = "<img alt='' src='" + userlist["Imgurl3"] + "'>";
+
+                    //alert(userlist["Imgurl3"]);
                     document.getElementById("htmltitle").innerHTML = userlist["ProductTitle"] + "详情页面_马卡烤箱官网";
                     document.getElementById("producttitle").innerHTML = userlist["ProductTitle"];
                     document.getElementById("productprice").innerHTML = userlist["Price"];
                     currentprice = parseInt(userlist["Price"]);
+                    danprice = parseInt(userlist["Price"]);
                     document.getElementById("productcontent").innerHTML = userlist["ProductContent"];
-
+                    document.getElementById("img1").innerHTML = "<img alt='' src='" + userlist["Imgurl1"] + "'>";
+                    document.getElementById("img2").innerHTML = "<img alt='' src='" + userlist["Imgurl2"] + "'>";
+                    document.getElementById("img3").innerHTML = "<img alt='' src='" + userlist["Imgurl3"] + "'>";
 
                 }
             });
+           
         }
         function getdetail(pid) {
             $.post("mapi/goodsapi.ashx", { action: "detail", pid: pid }, function (data) {
@@ -229,21 +233,22 @@
         }
         
         function addnum() {
-            // currentnumber = parseInt($("#productnum").val()) ;
-
-            document.getElementById("productnum").value = parseInt($("#productnum").val()) + 1;
             currentnumber = parseInt($("#productnum").val()) + 1;
-            document.getElementById("productprice").innerHTML = currentprice * currentnumber;
 
+            document.getElementById("productnum").value = currentnumber;
+          //  currentnumber = parseInt($("#productnum").val()) + 1;
+            document.getElementById("productprice").innerHTML = danprice * currentnumber;
+            currentprice = document.getElementById("productprice").innerHTML;
         }
        
         function Lessnum() {
             currentnumber = parseInt($("#productnum").val());
-            if (currentnum > 1) {
+            if (currentnumber > 1) {
                 //  currentnumber = currentnumber - 1;
-                document.getElementById("productnum").value = parseInt($("#productnum").val()) - 1;
-                currentnumber = parseInt($("#productnum").val()) - 1;
-                document.getElementById("productprice").innerHTML = currentprice * currentnumber;
+                document.getElementById("productnum").value = currentnumber - 1;
+                currentnumber = parseInt($("#productnum").val());
+                document.getElementById("productprice").innerHTML = danprice * currentnumber;
+                currentprice = document.getElementById("productprice").innerHTML;
 
             }
             else {
@@ -257,16 +262,16 @@
             document.getElementById("productnum").value = currentnumber;
             $(".size_click").removeClass('size_click');
             $("#spec_" + key).addClass('size_click');
-            currentprice = parseInt(price);
-            currentprice = price;
-            document.getElementById("productprice").innerHTML = currentprice;
+           // currentprice = parseInt(price);
+            danprice = price;
+            document.getElementById("productprice").innerHTML = price;
             document.getElementById("productnum").value = 1;
         }
         function addToCart() {
             showLoading();
-         
             $.post("mapi/cartapi.ashx", { action: "add", mid: detailId, mprice: currentprice, number: currentnumber, pid: pid }, function (data) {
                 if (data == "sucess") {
+                    hideLoading();
                     alert("成功加入购物车");
                     window.location.href = "mycart.aspx";
                 }
@@ -290,6 +295,5 @@
         seajs.use("js/page/common");
         seajs.use("js/page/buy");
     </script>
-    <script src="mjs/common.js"></script>
 </body>
 </html>

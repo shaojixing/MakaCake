@@ -247,6 +247,7 @@
     <Content Include="weixintest.aspx" />
     <Content Include="mapi\wxapi.ashx" />
     <Content Include="mapi\goodsapi.ashx" />
+    <Content Include="mapi\memberapi.ashx" />
     <None Include="Properties\PublishProfiles\22.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -386,6 +387,9 @@
     </Compile>
     <Compile Include="mapi\loginapi.ashx.cs">
       <DependentUpon>loginapi.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="mapi\memberapi.ashx.cs">
+      <DependentUpon>memberapi.ashx</DependentUpon>
     </Compile>
     <Compile Include="mapi\orderapi.ashx.cs">
       <DependentUpon>orderapi.ashx</DependentUpon>
