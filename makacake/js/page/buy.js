@@ -4,7 +4,8 @@ define(function(require,exports,module){
 require('zepto');
 require('iscroll');
 require('js/modules/TouchSlide.1.1.js');
-;(function($){
+    ; (function ($) {
+       // alert("frist");
 	//banner轮播图
     TouchSlide({
         slideCell: "#cake-slide",
