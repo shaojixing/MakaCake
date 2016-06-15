@@ -22,8 +22,13 @@ namespace CakeProJect
             else
             {
                 BindList();
+                BindDetail();
             }
+        
         }
+
+        public string counttent = "";
+
         private void BindList()
         {
             ProductBll bll = new ProductBll();
@@ -43,6 +48,8 @@ namespace CakeProJect
                  this.txtcateg.Value = model.Category.ToString() ;
                 // this.txtptitle.Value = model.ProductTitle;
                  //this.txtptitle.Value = model.ProductTitle;
+                 this.txtId.Value = model.Id.ToString();
+                 counttent=model.ProductContent;
 
              }
 
@@ -50,6 +57,21 @@ namespace CakeProJect
            // this.productlist.DataSource = bll.GetProductListByClassId(id);
             //this.productlist.DataBind();
 
+        }
+
+        private void BindDetail()
+        {
+            ProductBll bll = new ProductBll();
+            if (Request["pid"] != null)
+            {
+                List<T_ProductDetail> list = new List<T_ProductDetail>();
+                int pid = Convert.ToInt32(Request["pid"].ToString());
+                list = bll.GetProductDetailById(pid);
+                 this.detaildata.DataSource =list;
+            this.detaildata.DataBind();
+               
+
+            }
         }
     }
 }

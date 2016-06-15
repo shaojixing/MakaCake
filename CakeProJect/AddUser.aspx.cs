@@ -16,12 +16,12 @@ namespace CakeProJect
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!AdminLoginHelper.IsLogin())
-            {
-                Response.Clear();
-                Response.Write("没有相关权限，非法访问！");
-                Response.End();
-            }
+            //if (!AdminLoginHelper.IsLogin())
+            //{
+            //    Response.Clear();
+            //    Response.Write("没有相关权限，非法访问！");
+            //    Response.End();
+            //}
         }
 
         protected void Button1_Click(object sender, EventArgs e)

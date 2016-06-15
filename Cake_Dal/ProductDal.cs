@@ -54,5 +54,26 @@ namespace Cake_Dal
                return db.T_ProductComment.Where(t => t.ProductId == PId).ToList();
            }
        }
+
+       public bool UpdateProduct(T_Protuct model)
+       {
+           using (var db = new cakedbEntities())
+           {
+               db.T_Protuct.Attach(model);
+               db.Entry<T_Protuct>(model).State = System.Data.Entity.EntityState.Modified;
+
+               return db.SaveChanges() > 0;
+           }
+       }
+
+       public bool AddProduct(T_Protuct model)
+       {
+           using (var db = new cakedbEntities())
+           {
+               db.Set<T_Protuct>().Add(model);
+               
+               return db.SaveChanges() > 0;
+           }
+       }
     }
 }
