@@ -27,8 +27,45 @@ namespace CakeProJect.api
                     add(context);
                     break;
 
+                case "updatedetail":
+                    updatedetail(context);
+                    break;
+
 
             }
+        }
+
+        private void updatedetail(HttpContext context)
+        {
+             int did =Convert.ToInt32(context.Request["did"]);
+             var pid = context.Request["pid"];
+             var specification = context.Request["specification"];
+             var price = context.Request["price"];
+             var size = context.Request["size"];
+             ProductBll bll = new ProductBll();
+             bool res = false;
+             T_ProductDetail model = new T_ProductDetail();
+
+
+             model = bll.GetPDetailById(did);
+            if(model!=null)
+            {
+                model.Price = Convert.ToDecimal(price);
+                model.Size = size;
+                model.Specification = Convert.ToInt32(specification);
+                //model.
+                res = bll.UpdateProductDtail(model);
+            }
+            if (res)
+            {
+                context.Response.Write("true");
+            }
+            else
+            {
+                context.Response.Write("false");
+            }
+            
+           // throw new NotImplementedException();
         }
 
         private void add(HttpContext context)

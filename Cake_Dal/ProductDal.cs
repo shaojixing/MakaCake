@@ -75,5 +75,29 @@ namespace Cake_Dal
                return db.SaveChanges() > 0;
            }
        }
+
+       public bool UpdateProductDtail(T_ProductDetail model)
+       {
+           using (var db = new cakedbEntities())
+           {
+               db.T_ProductDetail.Attach(model);
+               db.Entry<T_ProductDetail>(model).State = System.Data.Entity.EntityState.Modified;
+
+               return db.SaveChanges() > 0;
+           }
+       }
+
+       public bool AddProductDetail(T_ProductDetail model)
+       {
+           using (var db = new cakedbEntities())
+           {
+               db.Set<T_ProductDetail>().Add(model);
+               
+               return db.SaveChanges() > 0;
+           }
+       }
+
+   
+
     }
 }

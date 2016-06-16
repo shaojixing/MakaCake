@@ -56,5 +56,17 @@ namespace Cake_Bll
             ProductDal productdal = new ProductDal();
             return productdal.AddProduct(model);
         }
+
+        public bool UpdateProductDtail(T_ProductDetail model)
+        {
+            ProductDal productdal = new ProductDal();
+            return productdal.UpdateProductDtail(model);
+        }
+
+        public bool AddProductDetail(T_ProductDetail model)
+        {
+            ProductDal productdal = new ProductDal();
+            return productdal.UpdateProductDtail(model);
+        }
     }
 }

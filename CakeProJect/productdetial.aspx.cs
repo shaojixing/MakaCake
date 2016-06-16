@@ -11,6 +11,7 @@ namespace CakeProJect
 {
     public partial class productdetial : System.Web.UI.Page
     {
+        public string  strimgurl = System.Configuration.ConfigurationManager.AppSettings["imgurl"];
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!AdminLoginHelper.IsLogin())
@@ -31,6 +32,7 @@ namespace CakeProJect
 
         private void BindList()
         {
+           
             ProductBll bll = new ProductBll();
             if (Request["pid"] != null)
             {
@@ -42,12 +44,10 @@ namespace CakeProJect
                  this.txtptitle.Value = model.ProductTitle;
                  this.txtprice.Value = model.Price.ToString();
                  this.txtpdec.Value = model.productdec;
-                 this.txtimg1.Value = model.Imgurl1;
-                 this.txtimg2.Value = model.Imgurl2;
-                 this.txtimg3.Value = model.Imgurl3;
+                 this.txtimg1.Src = strimgurl + model.Imgurl1;
+                 this.txtimg2.Src = strimgurl + model.Imgurl2;
+                 this.txtimg3.Src = strimgurl + model.Imgurl3;
                  this.txtcateg.Value = model.Category.ToString() ;
-                // this.txtptitle.Value = model.ProductTitle;
-                 //this.txtptitle.Value = model.ProductTitle;
                  this.txtId.Value = model.Id.ToString();
                  counttent=model.ProductContent;
 
@@ -69,8 +69,72 @@ namespace CakeProJect
                 list = bll.GetProductDetailById(pid);
                  this.detaildata.DataSource =list;
             this.detaildata.DataBind();
-               
+            }
+        }
 
+        protected void btnupimg1_Click(object sender, EventArgs e)
+        {
+            if (fileimg1.HasFile)
+            {
+                var now = DateTime.Now;
+                var fnArr = fileimg1.FileName.Split('.');
+                var fp = System.Configuration.ConfigurationManager.AppSettings["backfileurl"];
+                var path = fp + string.Format("upload\\{0}\\{1}\\{2}\\", now.Year, now.Month.ToString().PadLeft(2, '0'), now.Day.ToString().PadLeft(2, '0'));
+                var imgurl = string.Format("upload/{0}/{1}/{2}/{3}.{4}", now.Year, now.Month.ToString().PadLeft(2, '0'), now.Day.ToString().PadLeft(2, '0'), now.ToString("yyyyMMddHHmmssfff"), fnArr[fnArr.Length - 1]);
+                var fimgsrc = path + string.Format("\\{0}.{1}", now.ToString("yyyyMMddHHmmssfff"), fnArr[fnArr.Length - 1]);
+                if (!System.IO.Directory.Exists(path))
+                {
+                    System.IO.Directory.CreateDirectory(path);
+                }
+                fileimg1.SaveAs(fimgsrc);
+               // var gid = long.Parse(hfIdAd.Value);
+               // var r1 = gm.SetGoodsAD(gid, 1, imgurl);
+               // BindData();
+                this.txtimg1.Src = strimgurl + imgurl;
+            }
+        }
+
+        protected void btnimg2_Click(object sender, EventArgs e)
+        {
+            if (fileimg2.HasFile)
+            {
+                var now = DateTime.Now;
+                var fnArr = fileimg2.FileName.Split('.');
+                var fp = System.Configuration.ConfigurationManager.AppSettings["backfileurl"];
+                var path = fp + string.Format("upload\\{0}\\{1}\\{2}\\", now.Year, now.Month.ToString().PadLeft(2, '0'), now.Day.ToString().PadLeft(2, '0'));
+                var imgurl = string.Format("upload/{0}/{1}/{2}/{3}.{4}", now.Year, now.Month.ToString().PadLeft(2, '0'), now.Day.ToString().PadLeft(2, '0'), now.ToString("yyyyMMddHHmmssfff"), fnArr[fnArr.Length - 1]);
+                var fimgsrc = path + string.Format("\\{0}.{1}", now.ToString("yyyyMMddHHmmssfff"), fnArr[fnArr.Length - 1]);
+                if (!System.IO.Directory.Exists(path))
+                {
+                    System.IO.Directory.CreateDirectory(path);
+                }
+                fileimg2.SaveAs(fimgsrc);
+                // var gid = long.Parse(hfIdAd.Value);
+                // var r1 = gm.SetGoodsAD(gid, 1, imgurl);
+                // BindData();
+                this.txtimg2.Src = strimgurl + imgurl;
+            }
+        }
+
+        protected void btnimg3_Click(object sender, EventArgs e)
+        {
+            if (fileimg3.HasFile)
+            {
+                var now = DateTime.Now;
+                var fnArr = fileimg3.FileName.Split('.');
+                var fp = System.Configuration.ConfigurationManager.AppSettings["backfileurl"];
+                var path = fp + string.Format("upload\\{0}\\{1}\\{2}\\", now.Year, now.Month.ToString().PadLeft(2, '0'), now.Day.ToString().PadLeft(2, '0'));
+                var imgurl = string.Format("upload/{0}/{1}/{2}/{3}.{4}", now.Year, now.Month.ToString().PadLeft(2, '0'), now.Day.ToString().PadLeft(2, '0'), now.ToString("yyyyMMddHHmmssfff"), fnArr[fnArr.Length - 1]);
+                var fimgsrc = path + string.Format("\\{0}.{1}", now.ToString("yyyyMMddHHmmssfff"), fnArr[fnArr.Length - 1]);
+                if (!System.IO.Directory.Exists(path))
+                {
+                    System.IO.Directory.CreateDirectory(path);
+                }
+                fileimg3.SaveAs(fimgsrc);
+                // var gid = long.Parse(hfIdAd.Value);
+                // var r1 = gm.SetGoodsAD(gid, 1, imgurl);
+                // BindData();
+                this.txtimg3.Src = strimgurl + imgurl;
             }
         }
     }

@@ -120,6 +120,7 @@
     <Content Include="images\icon\apple-touch-icon-57x57-precomposed.png" />
     <Content Include="images\icon\DefaultAvatar.jpg" />
     <Content Include="images\icon\favicon.ico" />
+    <Content Include="images\loading.gif" />
     <Content Include="images\tab_left_active.gif" />
     <Content Include="images\tab_left_inactive.gif" />
     <Content Include="images\tab_left_over.gif" />
@@ -128,6 +129,7 @@
     <Content Include="images\tab_right_over.gif" />
     <Content Include="index.aspx" />
     <Content Include="js\ajax.js" />
+    <Content Include="js\common.js" />
     <Content Include="js\html5.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.mCustomScrollbar.concat.min.js" />

@@ -26,8 +26,12 @@
 .t2 { clear:both; /*border-collapse: collapse;*/ border: 1px solid #c9dae4; }
 .t2 tr td{ border-bottom: 1px solid #e6e6e6; padding: 5px 0px 5px 10px; line-height:22px; word-break:break-all;}
  .t2 .txt {
-       width:150px;
+       width:100px;
              }
+        .gridtable input  {
+        width:66px;
+        text-align:center;
+        }
     </style>
 </head>
 <body>
@@ -57,15 +61,38 @@
 
          </tr>
          <tr>
-            <td class="txt">缩略图一：</td><td><input type="text" id ="txtimg1" runat="server"/></td>
-             <td class="txt">缩略图二：</td><td><input type="text" id ="txtimg2" runat="server"/></td>
+            <td class="txt">缩略图一：</td>
+             <td>
+               <%--  <input type="text" id ="txtimg1" runat="server"/>  --%>
+                  <asp:FileUpload ID="fileimg1" runat="server" /></td>
+             <td class="txt"><asp:Button ID="btnupimg1" class="tt_btn" Text="上传" runat="server" OnClick="btnupimg1_Click"/></td>
+             <td><img id="txtimg1" runat="server"/></td>
+             
+         </tr>
+           <tr>
+          
+            <td class="txt">缩略图二：</td>
+             <td> <asp:FileUpload ID="fileimg2" runat="server" />
+              <%--   <input type="text" id ="txtimg2" runat="server"/>--%>
+
+             </td>
+                 <td class="txt"><asp:Button ID="btnimg2" class="tt_btn" Text="上传" runat="server" OnClick="btnimg2_Click"  /></td><td><img id="txtimg2" runat="server"/></td>
              
          </tr>
          <tr>  
-             <td class="txt">缩略图三：</td><td><input type="text" id ="txtimg3" runat="server"/></td>
-             <td class="txt">分类：</td><td><input type="text" id ="txtcateg" runat="server"/></td>
+             <td class="txt">缩略图三：</td>
+             <td>
+                 <asp:FileUpload ID="fileimg3" runat="server" />
+             </td>
+              <td class="txt"><asp:Button ID="btnimg3" class="tt_btn" Text="上传" runat="server" OnClick="btnimg3_Click"  /></td><td><img id="txtimg3" runat="server"/></td>
+            
+         </tr>
+         <tr>
+              <td class="txt">分类：</td><td><input type="text" id ="txtcateg" runat="server"/></td>
+              <td class="txt"></td><td></td>
          </tr>
           <tr>
+              
               <td class="txt">产品详情：</td>
               <td></td>
               <td></td>
@@ -103,12 +130,18 @@
                 <ItemTemplate>
 
                      <tr>
-                    <td><%#Eval("Id") %></td>
-                    <td><%#Eval("ProductId") %></td>
-                    <td><%#Eval("Specification") %>磅</td>
-                    <td>￥<%#Eval("Price") %></td>
-                         <td><%#Eval("Size") %></td>
-                     <td><a href="#">查看</a></td>
+                    <td>
+                        <input type="text" value=" <%#Eval("Id") %>" id="did" />
+                       </td>
+                    <td> <input type="text" value=" <%#Eval("ProductId") %>" id="pid" />
+                      </td>
+                    <td> <input type="text" value=" <%#Eval("Specification") %>" id="specification" />
+                        磅</td>
+                    <td> ￥<input type="text" value=" <%#Eval("Price") %>" id="price" />
+                        </td>
+                         <td> <input type="text" value=" <%#Eval("Size") %>" id="size" />
+                            </td>
+                     <td><a href="javascript:updatedetail();">更新</a></td>
 
                 </tr>
                 </ItemTemplate>
@@ -119,6 +152,9 @@
 
              </td>
 
+         </tr>
+         <tr>
+             <td colspan="4"></td>
          </tr>
     </table>
     </div>
@@ -246,25 +282,50 @@
                 var pid = $("#txtId").val();
                // alert(pid);
                 if (pid != "") {
-                    document.getElementById("bnt").innerHTML = "<button onclick='edit()'>修改产品</button>";
+                    document.getElementById("bnt").innerHTML = "<button onclick='edit()'>更新产品</button>";
                 }
                 else {
-                    document.getElementById("bnt").innerHTML = "<button onclick='add()'>添加产品</button>";
+                    document.getElementById("bnt").innerHTML = "<button onclick='add()'>发布产品</button>";
                 }
 
             });
+            function updatedetail()
+            {
+                var did = $("#did").val();
+                var pid = $("#pid").val();
+                var specification = $("#specification").val();
+                var price = $("#price").val();
+                var size = $("#size").val();
+               // var did = $("#did").val();
+                $.post("api/productapi.ashx", {
+                    action: "updatedetail",did:did,pid:pid,specification:specification,price:price,size:size
+                }, function (data) {
+                    if (data == "true") {
+                        alert("更新成功！");
+                        location.href = "productdetial.aspx?pid=" + pid;
+                    }
+                    else {
+                        alert("更新失败！");
+                        return false;
+                    }
+
+                });
+
+
+            }
+
             function edit() {
                 var pcontent = getContent();
                 var ptitle = $("#txtptitle").val();
                 var pdec = $("#txtpdec").val();
                 var pprice = $("#txtprice").val();
                 var psalenum = $("#txtsalenum").val();
-                var pimg1 = $("#txtimg1").val();
-                var pimg2 = $("#txtimg2").val();
-                var pimg3 = $("#txtimg3").val();
+                var pimg1 = $("#txtimg1")[0].src;;
+                var pimg2 = $("#txtimg2")[0].src; ;
+                var pimg3 = $("#txtimg3")[0].src; ;
                 var pcateg = $("#txtcateg").val();
                 var pid = $("#txtId").val();
-                //alert(ptitle);
+                alert(pimg1);
                 if (ptitle == "")
                 {
                     alert("产品名称不能为空！");

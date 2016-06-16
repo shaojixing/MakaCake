@@ -12,6 +12,8 @@ canvas{z-index:-1;position:absolute;}
 <script src="js/jquery.js"></script>
 <script src="js/verificationNumbers.js"></script>
 <script src="js/Particleground.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <script src="js/common.js"></script>
 <script>
 $(document).ready(function() {
   //粒子背景特效
@@ -24,13 +26,16 @@ $(document).ready(function() {
 
   //测试提交，对接程序删除即可
   function login()
-{
+  {
+      showLoading();
       // alert("2");
       var username = $("#username").val();
       var pwd = $("#pwd").val();
      // alert(username+pwd);
       $.post("api/loginapi.ashx", { action: "login",username:username, pwd:pwd}, function (data) {
+          hideLoading();
           if (data == "true") {
+              alert("登陆成功！");
               location.href = "productlist.aspx";
           }
           else {
@@ -71,5 +76,18 @@ $(document).ready(function() {
   <p>Email:shaojixing@qq.com</p>
  </dd>
 </dl>
+    <div id="shade" style="width: 100%; height: 100%; display: none; left: 0px; top: 0px;"></div>
+    <div id="loading">
+        <table width="100%">
+            <tr>
+                <td align="right">
+                    <img src="images/loading.gif" />
+                </td>
+                <td align="left">
+                    &nbsp;&nbsp;<span style="color:#555;">正在登陆....</span>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

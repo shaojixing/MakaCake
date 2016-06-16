@@ -67,13 +67,49 @@ namespace CakeProJect {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtsalenum;
         
         /// <summary>
+        /// fileimg1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileimg1;
+        
+        /// <summary>
+        /// btnupimg1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnupimg1;
+        
+        /// <summary>
         /// txtimg1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtimg1;
+        protected global::System.Web.UI.HtmlControls.HtmlImage txtimg1;
+        
+        /// <summary>
+        /// fileimg2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileimg2;
+        
+        /// <summary>
+        /// btnimg2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnimg2;
         
         /// <summary>
         /// txtimg2 控件。
@@ -82,7 +118,25 @@ namespace CakeProJect {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtimg2;
+        protected global::System.Web.UI.HtmlControls.HtmlImage txtimg2;
+        
+        /// <summary>
+        /// fileimg3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileimg3;
+        
+        /// <summary>
+        /// btnimg3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnimg3;
         
         /// <summary>
         /// txtimg3 控件。
@@ -91,7 +145,7 @@ namespace CakeProJect {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtimg3;
+        protected global::System.Web.UI.HtmlControls.HtmlImage txtimg3;
         
         /// <summary>
         /// txtcateg 控件。
