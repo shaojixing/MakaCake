@@ -31,7 +31,43 @@ namespace CakeProJect.api
                     updatedetail(context);
                     break;
 
+                case "adddetail":
+                    adddetail(context);
+                    break;
 
+
+            }
+        }
+
+        private void adddetail(HttpContext context)
+        {
+          //  int did = Convert.ToInt32(context.Request["did"]);
+            int pid = Convert.ToInt32(context.Request["pid"]);
+            var specification = context.Request["specification"];
+            var price = context.Request["price"];
+            var size = context.Request["size"];
+            ProductBll bll = new ProductBll();
+            bool res = false;
+            T_ProductDetail model = new T_ProductDetail();
+            
+
+         //   model = ;
+            if (bll.GetProductById(pid) != null)
+            {
+                model.Price = Convert.ToDecimal(price);
+                model.Size = size;
+                model.ProductId = pid;
+                model.Specification = Convert.ToInt32(specification);
+                //model.
+                res = bll.AddProductDetail(model);
+            }
+            if (res)
+            {
+                context.Response.Write("true");
+            }
+            else
+            {
+                context.Response.Write("false");
             }
         }
 
@@ -143,6 +179,7 @@ namespace CakeProJect.api
                     model.Category = Convert.ToInt32(pcateg);
                     model.ProductTitle = ptitle;
                     model.productdec = pdec;
+                    
                     res = bll.UpdateProduct(model);
                     if (res)
                     {

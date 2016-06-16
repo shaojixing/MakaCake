@@ -26,5 +26,6 @@ namespace Cake_Model
         public string Imgurl3 { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> SaleNumber { get; set; }
+        public Nullable<int> Status { get; set; }
     }
 }

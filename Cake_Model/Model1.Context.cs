@@ -34,12 +34,12 @@ namespace Cake_Model
         public virtual DbSet<T_UserClass> T_UserClass { get; set; }
         public virtual DbSet<T_UserGrade> T_UserGrade { get; set; }
         public virtual DbSet<T_ProductDetail> T_ProductDetail { get; set; }
-        public virtual DbSet<T_Protuct> T_Protuct { get; set; }
         public virtual DbSet<T_ProductComment> T_ProductComment { get; set; }
         public virtual DbSet<T_User> T_User { get; set; }
         public virtual DbSet<T_Cart> T_Cart { get; set; }
         public virtual DbSet<T_Order> T_Order { get; set; }
         public virtual DbSet<T_OrderLog> T_OrderLog { get; set; }
         public virtual DbSet<T_Admin> T_Admin { get; set; }
+        public virtual DbSet<T_Protuct> T_Protuct { get; set; }
     }
 }

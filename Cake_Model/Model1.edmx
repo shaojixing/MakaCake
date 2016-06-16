@@ -197,6 +197,7 @@
           <Property Name="Imgurl3" Type="varchar" MaxLength="50" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
           <Property Name="SaleNumber" Type="int" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="T_User">
           <Key>
@@ -375,13 +376,13 @@
           <EntitySet Name="T_UserClass" EntityType="Self.T_UserClass" />
           <EntitySet Name="T_UserGrade" EntityType="Self.T_UserGrade" />
           <EntitySet Name="T_ProductDetail" EntityType="cakedbModel.T_ProductDetail" />
-          <EntitySet Name="T_Protuct" EntityType="cakedbModel.T_Protuct" />
           <EntitySet Name="T_ProductComment" EntityType="cakedbModel.T_ProductComment" />
           <EntitySet Name="T_User" EntityType="cakedbModel.T_User" />
           <EntitySet Name="T_Cart" EntityType="cakedbModel.T_Cart" />
           <EntitySet Name="T_Order" EntityType="cakedbModel.T_Order" />
           <EntitySet Name="T_OrderLog" EntityType="cakedbModel.T_OrderLog" />
           <EntitySet Name="T_Admin" EntityType="cakedbModel.T_Admin" />
+          <EntitySet Name="T_Protuct" EntityType="cakedbModel.T_Protuct" />
         </EntityContainer>
         <EntityType Name="T_ProductDetail">
           <Key>
@@ -395,23 +396,6 @@
           <Property Name="Specification" Type="Int32" />
           <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ProductId" Type="Int32" />
-        </EntityType>
-        <EntityType Name="T_Protuct">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Imgurl1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Imgurl2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ProductContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="productdec" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Category" Type="Int32" />
-          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Imgurl3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="SaleNumber" Type="Int32" />
         </EntityType>
         <EntityType Name="T_ProductComment">
           <Key>
@@ -516,6 +500,24 @@
           <Property Name="RealName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="admintoken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_Protuct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Imgurl1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Imgurl2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="productdec" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="Int32" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Imgurl3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SaleNumber" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -641,24 +643,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="T_Protuct">
-            <EntityTypeMapping TypeName="cakedbModel.T_Protuct">
-              <MappingFragment StoreEntitySet="T_Protuct">
-                <ScalarProperty Name="SaleNumber" ColumnName="SaleNumber" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Imgurl3" ColumnName="Imgurl3" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <ScalarProperty Name="Category" ColumnName="Category" />
-                <ScalarProperty Name="productdec" ColumnName="productdec" />
-                <ScalarProperty Name="Remark" ColumnName="Remark" />
-                <ScalarProperty Name="ProductContent" ColumnName="ProductContent" />
-                <ScalarProperty Name="Imgurl2" ColumnName="Imgurl2" />
-                <ScalarProperty Name="Imgurl1" ColumnName="Imgurl1" />
-                <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="T_ProductComment">
             <EntityTypeMapping TypeName="cakedbModel.T_ProductComment">
               <MappingFragment StoreEntitySet="T_ProductComment">
@@ -765,6 +749,25 @@
                 <ScalarProperty Name="Mobile" ColumnName="Mobile" />
                 <ScalarProperty Name="Pwd" ColumnName="Pwd" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Protuct">
+            <EntityTypeMapping TypeName="cakedbModel.T_Protuct">
+              <MappingFragment StoreEntitySet="T_Protuct">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SaleNumber" ColumnName="SaleNumber" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Imgurl3" ColumnName="Imgurl3" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="productdec" ColumnName="productdec" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="ProductContent" ColumnName="ProductContent" />
+                <ScalarProperty Name="Imgurl2" ColumnName="Imgurl2" />
+                <ScalarProperty Name="Imgurl1" ColumnName="Imgurl1" />
+                <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

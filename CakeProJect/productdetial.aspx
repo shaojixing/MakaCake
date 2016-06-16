@@ -111,9 +111,19 @@
                 <td ></td>
           </tr>
          <tr>
-             <td>产品规格明细</td>
-             <td colspan="3"></td>
+             <td colspan="4">
+                   <table class="gridtable">
+                   <tr>
+                       <td>产品ID:</td><td><input type="text" readonly="true" id="npid" /></td>
+                       <td>磅数:</td><td><input type="text"  id="nspec" /></td>
+                       <td>产品价格:</td><td><input type="text"  id="nspice" /></td>
+                       <td>尺寸:</td><td><input type="text"  id="nsize" /></td>
+                       <td><button onclick='adddetail()'>添加规格</button></td>
+                   </tr>    
+                   </table>
+                       </td>
          </tr>
+
          <tr>
              <td colspan="4">
                    <table class="gridtable">
@@ -133,7 +143,7 @@
                     <td>
                         <input type="text" value=" <%#Eval("Id") %>" id="did" />
                        </td>
-                    <td> <input type="text" value=" <%#Eval("ProductId") %>" id="pid" />
+                    <td> <input type="text" readonly="true" value=" <%#Eval("ProductId") %>" id="pid" />
                       </td>
                     <td> <input type="text" value=" <%#Eval("Specification") %>" id="specification" />
                         磅</td>
@@ -166,28 +176,7 @@
     var ue = UE.getEditor('editor');
 
    // insertHtml();
-    function isFocus(e){
-        alert(UE.getEditor('editor').isFocus());
-        UE.dom.domUtils.preventDefault(e)
-    }
-    function setblur(e){
-        UE.getEditor('editor').blur();
-        UE.dom.domUtils.preventDefault(e)
-    }
-    function insertHtml() {
-       // var txtcontent=  ;
-        var value = prompt('', '');
-        alert(value);
-
-        UE.getEditor('editor').execCommand('insertHtml', value)
-    }
-    function createEditor() {
-        enableBtn();
-        UE.getEditor('editor');
-    }
-    function getAllHtml() {
-        alert(UE.getEditor('editor').getAllHtml())
-    }
+    
     function getContent() {
         var arr = [];
        // arr.push("使用editor.getContent()方法可以获得编辑器的内容");
@@ -196,85 +185,6 @@
         return arr.join("\n");
 
     }
-    function getPlainTxt() {
-        var arr = [];
-        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
-        arr.push("内容为：");
-        arr.push(UE.getEditor('editor').getPlainTxt());
-        alert(arr.join('\n'))
-    }
-    function setContent(isAppendTo) {
-        var arr = [];
-        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
-        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
-        alert(arr.join("\n"));
-    }
-    function setDisabled() {
-        UE.getEditor('editor').setDisabled('fullscreen');
-        disableBtn("enable");
-    }
-
-    function setEnabled() {
-        UE.getEditor('editor').setEnabled();
-        enableBtn();
-    }
-
-    function getText() {
-        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
-        var range = UE.getEditor('editor').selection.getRange();
-        range.select();
-        var txt = UE.getEditor('editor').selection.getText();
-        alert(txt)
-    }
-
-    function getContentTxt() {
-        var arr = [];
-        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
-        arr.push("编辑器的纯文本内容为：");
-        arr.push(UE.getEditor('editor').getContentTxt());
-        alert(arr.join("\n"));
-    }
-    function hasContent() {
-        var arr = [];
-        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
-        arr.push("判断结果为：");
-        arr.push(UE.getEditor('editor').hasContents());
-        alert(arr.join("\n"));
-    }
-    function setFocus() {
-        UE.getEditor('editor').focus();
-    }
-    function deleteEditor() {
-        disableBtn();
-        UE.getEditor('editor').destroy();
-    }
-    function disableBtn(str) {
-        var div = document.getElementById('btns');
-        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
-        for (var i = 0, btn; btn = btns[i++];) {
-            if (btn.id == str) {
-                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
-            } else {
-                btn.setAttribute("disabled", "true");
-            }
-        }
-    }
-    function enableBtn() {
-        var div = document.getElementById('btns');
-        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
-        for (var i = 0, btn; btn = btns[i++];) {
-            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
-        }
-    }
-
-    function getLocalData () {
-        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
-    }
-
-    function clearLocalData () {
-        UE.getEditor('editor').execCommand( "clearlocaldata" );
-        alert("已清空草稿箱")
-    }
 </script>
 
         <script>
@@ -282,6 +192,8 @@
                 var pid = $("#txtId").val();
                // alert(pid);
                 if (pid != "") {
+                    document.getElementById("npid").value = pid;
+                   // $("#npid").val() = pid;
                     document.getElementById("bnt").innerHTML = "<button onclick='edit()'>更新产品</button>";
                 }
                 else {
@@ -313,7 +225,33 @@
 
 
             }
+            function adddetail()
+            {
+               // var did = $("#npid").val();
+                var pid = $("#npid").val();
+                var specification = $("#nspec").val();
+                var price = $("#nspice").val();
+                var size = $("#nsize").val();
+                if (pid == "")
+                {
+                    alert("产品ID 不能为空，要先有产品，才可以添加规格");
+                    return false;
+                }
+                // var did = $("#did").val();
+                $.post("api/productapi.ashx", {
+                    action: "adddetail", pid: pid, specification: specification, price: price, size: size
+                }, function (data) {
+                    if (data == "true") {
+                        alert("添加成功！");
+                        location.href = "productdetial.aspx?pid=" + pid;
+                    }
+                    else {
+                        alert("添加失败！");
+                        return false;
+                    }
 
+                });
+            }
             function edit() {
                 var pcontent = getContent();
                 var ptitle = $("#txtptitle").val();

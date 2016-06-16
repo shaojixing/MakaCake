@@ -14,13 +14,13 @@
         <EntityTypeShape EntityType="cakedbModel.T_UserClass" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cakedbModel.T_UserGrade" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cakedbModel.T_ProductDetail" Width="1.5" PointX="9.375" PointY="3.75" />
-        <EntityTypeShape EntityType="cakedbModel.T_Protuct" Width="1.5" PointX="11.375" PointY="3.75" />
         <EntityTypeShape EntityType="cakedbModel.T_ProductComment" Width="1.5" PointX="0.75" PointY="8.75" />
         <EntityTypeShape EntityType="cakedbModel.T_User" Width="1.5" PointX="7.375" PointY="9.75" />
         <EntityTypeShape EntityType="cakedbModel.T_Cart" Width="1.5" PointX="0.75" PointY="12.75" />
         <EntityTypeShape EntityType="cakedbModel.T_Order" Width="1.5" PointX="9.375" PointY="8.75" />
         <EntityTypeShape EntityType="cakedbModel.T_OrderLog" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="cakedbModel.T_Admin" Width="1.5" PointX="11.375" PointY="8.75" />
+        <EntityTypeShape EntityType="cakedbModel.T_Protuct" Width="1.5" PointX="11.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
