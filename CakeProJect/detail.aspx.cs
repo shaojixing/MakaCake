@@ -6,13 +6,34 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using Cake_Model;
-using Cake_Bll;
+using Cake_Common;
+using Cake_Bll; 
 
 namespace CakeProJect
 {
     public partial class detail : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+            if (!AdminLoginHelper.IsLogin())
+            {
+                Response.Clear();
+                Response.Write("没有相关权限，非法访问！");
+                Response.End();
+            }
+            else
+            {
+                BindList();
+              
+            }
+           
+           
+
+
+        }
+
+        private void BindList()
         {
             string id = Request["id"];
             OrderBll bll = new OrderBll();
@@ -26,9 +47,6 @@ namespace CakeProJect
             }
             this.orderlist.DataSource = bll.GetOrderDetailList(id);
             this.orderlist.DataBind();
-           
-
-
         }
     }
 }

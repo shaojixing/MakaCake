@@ -143,5 +143,10 @@ namespace Cake_Bll
            }
 
        }
+       public List<T_User> GetUserList()
+       {
+           UserDal dal = new UserDal();
+         return  dal.GetUserList();
+       }
     }
 }

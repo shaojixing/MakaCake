@@ -24,6 +24,13 @@ namespace Cake_Dal
                return db.T_Address.Where(t => t.UserId == userid).FirstOrDefault();
            }
        }
+       public List<T_Address> GetAddressListByUserId(int userid)
+       {
+           using (var db = new cakedbEntities())
+           {
+               return db.T_Address.Where(t => t.UserId == userid).ToList();
+           }
+       }
 
     }
 }

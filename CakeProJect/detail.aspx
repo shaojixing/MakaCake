@@ -6,40 +6,20 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-        <style type="text/css">
-table.gridtable {
-	font-family: verdana,arial,sans-serif;
-	font-size:11px;
-	color:#333333;
-	border-width: 1px;
-	border-color: #666666;
-	border-collapse: collapse;
-}
-table.gridtable th {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #dedede;
-}
-table.gridtable td {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #ffffff;
-}
-</style>
+    <link href="css/common.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-   订单号： <input  runat="server" id="txtordercode"/>
-       手机号码： <input  runat="server" id="txtmobile"/>
-        收货地址： <input  runat="server" id="txtaddress"/>
+        <table class="gridtable">
+            <tr>
+                <td> 订单号：</td>
+                <td><input  runat="server" id="txtordercode"/></td>
+                   <td> 手机号码：</td> <td><input  runat="server" id="txtmobile"/></td>
+       <td> 收货地址：</td> <td><input  runat="server" id="txtaddress"/></td>
+            </tr>
 
-    </div>
-           <div id="datalist" runat="server">
+        <tr>
+            <td colspan="6" >
             <table class="gridtable">
                 <tr>
                     <th>订单编号</th>
@@ -64,8 +44,10 @@ table.gridtable td {
 
             </asp:Repeater>
           </table>
-     
-        </div>
+     </td>
+            </tr>
+         </table>
+        
     </form>
 </body>
 </html>

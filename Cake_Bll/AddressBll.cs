@@ -57,5 +57,23 @@ namespace Cake_Bll
 
       }
 
+      public List<T_Address> GetAddressListByUserId(int userid)
+      {
+          //UserBll bll = new UserBll();
+        //  int userid = 0;
+        //  userid = bll.GetUserIdByToken();
+          if (userid > 0)
+          {
+              AddressDal addressdal = new AddressDal();
+              return addressdal.GetAddressListByUserId(userid);
+
+          }
+
+          else
+          {
+              return null;
+          }
+      }
+
     }
 }
