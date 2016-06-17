@@ -67,8 +67,17 @@ namespace CakeProJect
                 List<T_ProductDetail> list = new List<T_ProductDetail>();
                 int pid = Convert.ToInt32(Request["pid"].ToString());
                 list = bll.GetProductDetailById(pid);
-                 this.detaildata.DataSource =list;
-            this.detaildata.DataBind();
+                this.detaildata.DataSource = list;
+                this.detaildata.DataBind();
+            }
+            else
+            {
+                List<T_ProductDetail> list = new List<T_ProductDetail>();
+               // int pid = Convert.ToInt32(Request["pid"].ToString());
+                T_ProductDetail model = new T_ProductDetail();
+                list.Add(model);
+                this.detaildata.DataSource = list;
+                this.detaildata.DataBind();
             }
         }
 

@@ -104,6 +104,14 @@ namespace Cake_Dal
                return db.T_User.Where(t => t.InvitationCode == code).FirstOrDefault();
            }
        }
+
+       public List<T_User> GetUserList()
+       {
+           using (var db = new cakedbEntities())
+           {
+               return db.T_User.OrderByDescending(t => t.Id).ToList();
+           }
+       }
        
 
 
